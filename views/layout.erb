@@ -1,0 +1,70 @@
+<!DOCTYPE html>                                                         
+<html>                        
+<head>                                                    
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+  <link rel="stylesheet" type="text/css" href="style.css">                  
+  <link rel="stylesheet" type="text/css" href="grid.css">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Quattrocento|Quattrocento+Sans|Ubuntu">
+  <title>Szu Han Chang</title>   
+
+  <script type="text/javascript">
+  var _gaq = _gaq || [];                                     
+  _gaq.push(['_setAccount', 'UA-3354361-40']);                  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script>
+</head>
+
+<body>
+  <div id="content" class="row">                                                         
+    <div id="header" class="row">                                                        
+      <div id="logo" class="column grid_4 align_center">                                 
+        <h1 id="title">Szu Han Chang</h1>                                                
+				<span class="sans_serif"><%= @title %></span>                         
+      </div>
+        
+      <div id="menu" class="column grid_8"> 
+        <ul id="menulist">                                                               
+          <li class="menuitem"><img src="images/home.png" class="menuicon" alt="" /> <a href="/">Home</a></li>
+          <li class="menuitem"><img src="images/resume.png" class="menuicon" alt="" /> <a href="/resume">Resumes</a></li>
+          <li class="menuitem"><img src="images/projects.png" class="menuicon" alt="" /> <a href="/projects">Projects</a></li>
+          <li class="menuitem"><img src="images/coursework.png" class="menuicon" alt="" /> <a href="/coursework">Coursework</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr />
+
+<%= yield %>
+
+    <div id="foot" class="row">
+      <div class="column grid_4 padding align_center">
+        <img src="images/gmail.gif" alt="" /> Email<br />
+        <a href="mailto:szuhanchang@gmail.com">szuhanchang@gmail.com</a>
+      </div>
+      <div class="column grid_4 padding align_center">
+        <img src="images/linkedin.gif" alt="" /> LinkedIn<br />
+        <a href="http://www.linkedin.com/in/szuhanchang">linkedin.com/in/szuhanchang</a>
+      </div>
+      <div class="column grid_4 padding align_center">
+        <img src="images/github.png" alt="" /> GitHub<br />
+        <a href="http://www.github.com/hanchang">github.com/hanchang</a>
+      </div>
+    </div>
+    <div id="info" class="row">
+      <div id="copyright" class="column grid_5">
+        Copyright &copy; 2011 <a href="http://www.szuhanchang.com">szuhanchang.com</a><br />
+        Szu Han Chang | 張思瀚
+      </div>
+      <div id="heritage" class="column grid_7 align_right">
+        I am a dual <img src="images/gif/us.gif" alt="" /> United States and <img src="images/gif/tw.gif" alt="" /> Republic of China (Taiwan) citizen.<br />
+        I speak native <img src="images/gif/gb.gif" alt="" /> English and am fluent in <img src="images/gif/cn.gif" alt="" /> Mandarin Chinese (中文).
+      </div>
+    </div>
+  </div> <!-- End content div -->
+</body>
+</html>
