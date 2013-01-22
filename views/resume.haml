@@ -1,0 +1,93 @@
+#resume
+  %h1.pagination-centered Resume
+
+  %hr
+
+  %h2.pagination-centered Work Experience
+
+  %h4 
+    %img(src="/images/tnc.png")
+    Senior Web Developer
+    %small
+      %strong 
+        %a(href="http://www.thenetcircle.com") TheNetCircle
+    .pull-right 
+      %span.label.label-important Shanghai
+      %span.label.label-info June 2011 - Oct 2012
+
+  %p
+    Singlehandedly spearheaded and implemented functional testing as a requirement for Scrum story completion via Behat and Jenkins - for TWO projects.
+  %p
+    Streamlined deployment from multiple shell scripts and commands into a one-click button on Jenkins, complete with test run results, reporting, and notifications.
+  %p 
+    Pioneered the use of static code analysis via <a href="http://www.sonarsource.org">Sonar</a> to find compile-time bugs.
+  %p
+    Identified and restructured slow MySQL queries to improve application performance.
+  %p
+    Set up, customized, and maintained an instance of <a href="http://hubot.github.com">Hubot</a> for broadcasting build and deploy statuses on IRC (as well as fun shenanigans!). 
+  %p
+    Responsible for interviewing and hiring potential candidates.
+  %p
+    Successfully convinced management to reboot a flailing 3+ year project that was costing the company €X0,000 EUR/month. See the presentation at SpeakerDeck.
+
+  %h4 
+    %img(src="/images/lime.png")
+    Software Engineer
+    %small
+      %strong 
+        %a(href="http://www.limebrokerage.com") Lime Brokerage
+    .pull-right 
+      %span.label.label-important Boston
+      %span.label.label-info February 2009 - May 2010
+
+  %p
+    Architected and programmed a real time risk metric calculation engine in C++ used to process a variety of equities, futures, and options market metrics used in analyzing performance and risk of automated trading algorithms for each brokerage account. This engine then communicated the metrics (up to 1000/sec) via a Lime proprietary RPC messaging system to the control plane.
+  %p 
+    Designed and developed PULP, a custom programming language that incorporates basic elements of equities measurements (e.g. open order value, current buying power, shares traded, etc.) combined with mathematical and boolean operators to build customizable risk metrics on demand that broadcasts the values to clients in real time. PULP used ANTLR 3 for parsing and lexing.
+  %p
+    Developed the client side portlet in Flex for viewing the real time risk calculation metrics. The data was obtained from the control plane configuration via our web services backend implemented in Java and sent to the Flex clientside frontend via AMF. The data was requested using a GUI that generated the PULP code necessary to calculate the metric.
+  %p
+    Worked with J2EE using a custom MVC architecture through JBoss and Tomcat, Hibernate + MySQL for data store, and Adobe Flex for front end visualization to create portlets for clients to access various account, market, and risk data.
+  %p 
+    Experimented with CUDA, an nVidia architecture used to take advantage of the parallel processing power of GPUs to reduce computational running time.
+  %p
+    Prepared and demonstrated presentations of this technology to both internal users and potential customers.
+
+  %h3
+
+  %hr
+
+  %h2.pagination-centered Education
+
+  %h4 
+    %img(src="/images/bu.png")
+    Boston University
+    %small 
+      %strong Bachelor's and Master's in Computer Science
+    .pull-right 
+      .label.label-info 2004 - 2008
+  %p Completed the BA/MA Computer Science Program, which grants both a bachelor's and master's degree simultaneously upon graduation, in just 4 years.
+  %p Graduated Cum Laude; selected by faculty and served as the Boston University Computer Science student graduation speaker for the class of 2008.
+
+  %hr
+
+  %h2.pagination-centered Administrivia
+
+  .row
+    .span3
+      %h4 Languages
+      %p 
+        %img(src="/images/png/gb.png")
+        Native English 
+        %br
+        %img(src="/images/png/cn.png")
+        Fluent in Mandarin Chinese
+
+    .span5
+      %h4 Citizenship
+      %p 
+        %img(src="/images/png/us.png")
+        Dual United States and Taiwan (ROC) citizen. 
+        %br 
+        %img(src="/images/png/tw.png")
+        Legally able to work in the USA, no H1B visa required!

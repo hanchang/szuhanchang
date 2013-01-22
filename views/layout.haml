@@ -1,0 +1,78 @@
+!!! 5
+%html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "en", :lang => "en"}
+
+%head
+  %link{:rel => 'stylesheet', :href => '/css/bootstrap.css', :type => 'text/css'}
+  %link{:rel => 'stylesheet', :href => '/css/font-awesome.min.css', :type => 'text/css'}
+  %link{:rel => 'stylesheet', :href => '/css/style.css', :type => 'text/css'}
+
+%body
+  .container
+    .row
+      #card.well.affix.span3
+                
+        #avatar
+          %img(src="/images/han.jpg")
+
+        #bio
+          %h2 Szu Han Chang
+
+        #contact
+          %ul.unstyled
+            %li 
+              %i.icon-home 
+              Shanghai, China
+            %li
+              %i.icon-phone
+              +86 15000021262 
+            %li
+              %i.icon-globe 
+              %a(href='http://www.szuhanchang.com') www.szuhanchang.com
+            %li
+              %i.icon-inbox
+              %a(href='mailto:szu.han.chang@gmail.com') szu.han.chang@gmail.com
+            %li
+              %i.icon-linkedin
+              %a(href='http://www.linkedin.com/in/szuhanchang') linkedin.com/in/szuhanchang
+            %li
+              %i.icon-twitter
+              %a(href='http://www.twitter.com/hanchang') @hanchang
+            %li
+              %i.icon-github
+              %a(href='http://www.github.com/hanchang') github.com/hanchang
+            %li
+              %i.icon-laptop
+              %a(href='http://www.speakerdeck.com/hanchang') speakerdeck.com/hanchang
+
+        %hr
+
+        #menu
+          %ul.nav.nav-pills.nav-stacked
+            %li.nav-header Navigation Menu
+            %li{:class => @resume}
+              %a(href='/') 
+                %i.icon-tasks 
+                Resume
+            %li{:class => @projects}
+              %a(href='/projects') 
+                %i.icon-beaker 
+                Projects
+            %li{:class => @coursework}
+              %a(href='/coursework') 
+                %i.icon-book 
+                Coursework
+
+
+    .row
+      .span4
+        %br
+
+      .span8
+        = yield
+
+    %footer.footer
+      .container
+        &copy; 
+        = Time.now.year 
+        Szu Han Chang
+
