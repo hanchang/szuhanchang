@@ -3,6 +3,7 @@
 
 %head
   %link{:rel => 'stylesheet', :href => '/css/bootstrap.css', :type => 'text/css'}
+  %link{:rel => 'stylesheet', :href => '/css/bootstrap-responsive.css', :type => 'text/css'}
   %link{:rel => 'stylesheet', :href => '/css/font-awesome.min.css', :type => 'text/css'}
   %link{:rel => 'stylesheet', :href => '/css/style.css', :type => 'text/css'}
 
@@ -11,11 +12,13 @@
     .row
       #card.well.affix.span3
                 
+        #bio
+          %h2 Szu Han Chang
+
         #avatar
           %img.img-polaroid(src="/images/han.jpg")
 
-        #bio
-          %h2 Szu Han Chang
+        %hr
 
         #contact
           %ul.unstyled
