@@ -1,17 +1,21 @@
 #projects
   %h1.pagination-centered Projects
 
+  %blockquote All projects are solo unless noted otherwise.
+
   .navbar
     .navbar-inner
       %ul.nav
-        %li.active
-          %a(href="#web") Web Applications
         %li
-          %a(href="#mobile") Mobile Applications
+          %a(href="#web") Web Apps
+        %li
+          %a(href="#mobile") Mobile Apps
+        %li
+          %a(href="#open") Open Source
         %li
           %a(href="#content") Content Sites
         %li
-          %a(href="#trading") Algorithmic Trading
+          %a(href="#trading") Algo Trading
 
   / Webapps
   %a{:name => "web"}
@@ -25,7 +29,7 @@
       .span3
         %a(href="https://www.oneryng.com") oneryng.com
         %br
-        %img{:alt => "", :src => "/images/oneryng.png", :width => "300"}
+        %img(src="/images/oneryng.png")
         %ul
           %li Ruby on Rails 3.2.11
           %li Postgres 9.2
@@ -61,12 +65,42 @@
   .project_container
     .row
       .span8
+        %h4 
+          BitXF
+          %small cofounder
+    .row
+      .span3
+        %a(href="http://www.bitxf.com") bitxf.com
+        %br
+        %img(src="/images/bitxf.png")
+        %br
+        %a.btn(href="https://www.bitxf.com") Visit Site
+      .span5
+        %p
+          %em 
+            %strong Background
+          %br
+          BitXF is a Bitcoin marketplace created to serve the Chinese demographic. It accepts deposits and withdrawals from Taobao and Alipay, the eBay and Paypal of China.
+        %p
+          Security is a huge concern for BitXF, which is why the vast majority of Bitcoins are held in cold storage (offline).
+        %p
+          %em
+            %strong Technology
+          %br
+          Although I don't believe in security through obscurity, my cofounder and I would still prefer to keep the implementation details of BitXF private to add an extra layer of protection.
+        %p
+          Please ask in-person for more details.
+
+
+  .project_container
+    .row
+      .span8
         %h4 Private Blog Network
     .row
       .span3
         (private url)
         %br
-        %img{:alt => "", :src => "/images/pbn.png", :width => "300"}
+        %img(src="/images/pbn.png")
         %ul
           %li Ruby on Rails 3.2.11
           %li Postgres 9.2
@@ -98,7 +132,7 @@
       .span3
         (private url)
         %br
-        %img{:alt => "", :src => "/images/koba.png", :width => "300"}
+        %img(src="/images/koba.png")
         %ul
           %li Sinatra
           %li Redis
@@ -134,7 +168,7 @@
       .span3
         %a(href="http://www.plethura.com") plethura.com
         %br
-        %img{:alt => "", :src => "/images/plethura.png", :width => "300"}
+        %img(src="/images/plethura.png")
         %ul
           %li Django 1.3
           %li SQLite
@@ -167,7 +201,7 @@
       .span3
         %a(href="http://modelmaker.pillarofeden.com") modelmaker.pillarofeden.com
         %br
-        %img{:alt => "", :src => "/images/modelmaker.png", :width => "300"}
+        %img(src="/images/modelmaker.png")
         %ul
           %li CodeIgniter 2
           %li i18n and l10n
@@ -197,13 +231,15 @@
   .project_container
     .row
       .span8
-        %h4 Fuel For Hire
+        %h4 
+          Fuel For Hire
+          %small cofounder
 
     .row
       .span3
         %a{:href => "http://www.fuelforhire.com"} fuelforhire.com
         %br
-        %img{:alt => "", :src => "/images/fuelforhire.png", :width => "300"}
+        %img(src="/images/fuelforhire.png")
         %ul
           %li CodeIgniter
           %li MySQL
@@ -233,19 +269,6 @@
 
   %hr
 
-  .navbar
-    .navbar-inner
-      %ul.nav
-        %li
-          %a(href="#web") Web Applications
-        %li.active
-          %a(href="#mobile") Mobile Applications
-        %li
-          %a(href="#content") Content Sites
-        %li
-          %a(href="#trading") Algorithmic Trading
-
-
   / Mobile
   %a{:name => "mobile"}
   %h3.pagination-centered Mobile Application Development
@@ -256,7 +279,7 @@
         %h4 Medical Abbreviations (iOS)
     .row
       .span3
-        %img{:alt => "", :src => "/images/NexusMedicalAbbreviations.png", :width => "200"}
+        %img(src="/images/NexusMedicalAbbreviations.png")
       .span5
         %p The idea for this app was given by my friend Kevin Lai who works as a pharmacist. The app development was completely done by myself; from start to finish it took one week without any prior iPhone development experience.
         %p
@@ -267,13 +290,20 @@
           %a.btn{:href => "http://www.nexusmedicalsolutions.com/products/medicalabbreviations"} 
             Medical Abbreviations Website
 
+  %hr
+
+  / Open Source 
+  %a{:name => "open"}
+  %h3.pagination-centered Open Source Contributions
+
   .project_container
     .row
       .span8
-        %h4 Friar Framework (Android)
+        %h4 
+          %a(href="http://www.friarframework.com") Friar Framework (Android)
     .row
       .span3
-        %img{:alt => "", :src => "/images/friar-robot.png", :width => "200"}
+        %img(src="/images/friar-robot.png")
       .span5
         %p The Friar Framework is an Android framework for creating mobile application versions of ebooks.
         %p
@@ -288,30 +318,32 @@
   .project_container
     .row
       .span8
-        %h4 Mozilla (Desktop)
+        %h4
+          %a(href="http://www.mozilla.org") Mozilla (Desktop)
     .row
       .span3
-        %img{:alt => "", :src => "/images/mozilla_logo.png"}
+        %img(src="/images/mozilla_logo.png")
       .span5
         %p 
           I am a Mozilla contributor who believes in open source and enjoys donating my occasional spare time to fix bugs in Firefox. To see a list of all the bugs I've contributed to so far, check out:
           %a{:href => "http://www.szuhanchang.com/mozilla"} http://www.szuhanchang.com/mozilla
         %p Find me on Mozilla's #introduction IRC channel, I'm frequently there!
+ 
+  .project_container
+    .row
+      .span8
+        %h4 
+          %a(href="http://www.horde.org") Horde Framework
+    .row
+      .span3
+        %img(src="/images/horde3.png")
+      .span5
+        %p 
+          During the summer between my freshman and sophomore years, I applied and entered the Google Summer of Code program, earning a $7500 grant to work on the Sedule Project, a module in the Horde Framework to help managers create and edit schedules for employee shifts based on their availability. 
+        %p 
+          %a(href="http://wiki.horde.org/Project/Sedule") wiki.horde.org/project/sedule
 
   %hr
-
-  .navbar
-    .navbar-inner
-      %ul.nav
-        %li
-          %a(href="#web") Web Applications
-        %li
-          %a(href="#mobile") Mobile Applications
-        %li.active
-          %a(href="#content") Content Sites
-        %li
-          %a(href="#trading") Algorithmic Trading
-
 
   / Content Sites
   %a{:name => "content"}
@@ -325,7 +357,7 @@
       .span3
         %a{:href => "http://www.programminginterview.com"} programminginterview.com
         %br
-        %img{:alt => "", :src => "/images/programminginterview.png", :width => "300"}
+        %img(src="/images/programminginterview.png")
         %ul
           %li Drupal
           %li MySQL
@@ -354,7 +386,7 @@
       .span3
         %a{:href => "http://www.snowboardsforwomen.com"} snowboardsforwomen.com
         %br
-        %img{:alt => "", :src => "/images/snowboardsforwomen.png", :width => "300"}
+        %img(src="/images/snowboardsforwomen.png")
         %ul
           %li CodeIgniter
           %li MySQL
@@ -392,7 +424,7 @@
       .span3
         %a{:href => "http://www.trekkingpolesguide.com"} trekkingpolesguide.com
         %br
-        %img{:alt => "", :src => "/images/trekkingpolesguide.png", :width => "300"}
+        %img(src="/images/trekkingpolesguide.png")
         %ul
           %li CodeIgniter
           %li MySQL
@@ -426,7 +458,7 @@
       .span3
         %a{:href => "http://www.nowyouhaveawebsite.com"} nowyouhaveawebsite.com
         %br
-        %img{:alt => "", :src => "/images/nowyouhaveawebsite.png", :width => "300"}
+        %img(src="/images/nowyouhaveawebsite.png")
         %ul
           %li WordPress
           %li MySQL
@@ -452,24 +484,14 @@
 
   %hr
 
-  .navbar
-    .navbar-inner
-      %ul.nav
-        %li
-          %a(href="#web") Web Applications
-        %li
-          %a(href="#mobile") Mobile Applications
-        %li
-          %a(href="#content") Content Sites
-        %li.active
-          %a(href="#trading") Algorithmic Trading
-
   / Trading
   %a{:name => "trading"}
   %h3.pagination-centered Algorithmic Trading
 
-  %h4 Algorithmic Trading Backtesting Framework and Strategy Development
-  %img.img-polaroid.pull-right{:alt => "", :src => "/images/bloomberg-terminal.jpg", :width => '280'}
+  %h4 
+    Algorithmic Trading Backtesting Framework and Strategy Development
+    %small cofounder
+  %img.img-polaroid.pull-right(src="/images/bloomberg-terminal.jpg" width='280')
   %ul
     %li Java JDK 1.6
     %li JUnit
