@@ -3,7 +3,6 @@
 
 %head
   %link{:rel => 'stylesheet', :href => '/css/bootstrap.css', :type => 'text/css'}
-  %link{:rel => 'stylesheet', :href => '/css/bootstrap-responsive.css', :type => 'text/css'}
   %link{:rel => 'stylesheet', :href => '/css/font-awesome.min.css', :type => 'text/css'}
   %link{:rel => 'stylesheet', :href => '/css/style.css', :type => 'text/css'}
 
@@ -13,10 +12,28 @@
       #card.well.affix.span3
                 
         #bio
-          %h2 Szu Han Chang
+          %h3.pagination-centered Szu Han Chang
 
         #avatar
           %img.img-polaroid(src="/images/han.jpg")
+
+        %hr
+
+        #menu
+          %ul.nav.nav-pills.nav-stacked
+            %li.nav-header Navigation Menu
+            %li{:class => @resume}
+              %a(href='/') 
+                %i.icon-tasks 
+                Resume
+            %li{:class => @projects}
+              %a(href='/projects') 
+                %i.icon-beaker 
+                Projects
+            %li{:class => @coursework}
+              %a(href='/coursework') 
+                %i.icon-book 
+                Coursework
 
         %hr
 
@@ -47,35 +64,16 @@
               %i.icon-laptop
               %a(href='http://www.speakerdeck.com/hanchang') speakerdeck.com/hanchang
 
-        %hr
-
-        #menu
-          %ul.nav.nav-pills.nav-stacked
-            %li.nav-header Navigation Menu
-            %li{:class => @resume}
-              %a(href='/') 
-                %i.icon-tasks 
-                Resume
-            %li{:class => @projects}
-              %a(href='/projects') 
-                %i.icon-beaker 
-                Projects
-            %li{:class => @coursework}
-              %a(href='/coursework') 
-                %i.icon-book 
-                Coursework
-
 
     .row
-      .span4
+      .span3
         %br
 
-      .span8
-        = yield
-
-    %footer.footer
-      .container
-        &copy; 
-        = Time.now.year 
-        Szu Han Chang
+      .span9
+        .content
+          = yield
+          %footer.footer
+            &copy; 
+            = Time.now.year 
+            Szu Han Chang
 

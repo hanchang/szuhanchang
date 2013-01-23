@@ -1,17 +1,17 @@
 #projects
   %h1.pagination-centered Projects
 
-  %ul.nav.nav-pills.pagination-centered
-    %li
-      %a(href="#web") Web Applications
-    %li
-      %a(href="#mobile") Mobile Applications
-    %li
-      %a(href="#content") Content Sites
-    %li
-      %a(href="#trading") Algorithmic Trading
-
-  %hr
+  .navbar
+    .navbar-inner
+      %ul.nav
+        %li.active
+          %a(href="#web") Web Applications
+        %li
+          %a(href="#mobile") Mobile Applications
+        %li
+          %a(href="#content") Content Sites
+        %li
+          %a(href="#trading") Algorithmic Trading
 
   / Webapps
   %a{:name => "web"}
@@ -233,6 +233,19 @@
 
   %hr
 
+  .navbar
+    .navbar-inner
+      %ul.nav
+        %li
+          %a(href="#web") Web Applications
+        %li.active
+          %a(href="#mobile") Mobile Applications
+        %li
+          %a(href="#content") Content Sites
+        %li
+          %a(href="#trading") Algorithmic Trading
+
+
   / Mobile
   %a{:name => "mobile"}
   %h3.pagination-centered Mobile Application Development
@@ -286,6 +299,19 @@
         %p Find me on Mozilla's #introduction IRC channel, I'm frequently there!
 
   %hr
+
+  .navbar
+    .navbar-inner
+      %ul.nav
+        %li
+          %a(href="#web") Web Applications
+        %li
+          %a(href="#mobile") Mobile Applications
+        %li.active
+          %a(href="#content") Content Sites
+        %li
+          %a(href="#trading") Algorithmic Trading
+
 
   / Content Sites
   %a{:name => "content"}
@@ -426,12 +452,24 @@
 
   %hr
 
+  .navbar
+    .navbar-inner
+      %ul.nav
+        %li
+          %a(href="#web") Web Applications
+        %li
+          %a(href="#mobile") Mobile Applications
+        %li
+          %a(href="#content") Content Sites
+        %li.active
+          %a(href="#trading") Algorithmic Trading
+
   / Trading
   %a{:name => "trading"}
   %h3.pagination-centered Algorithmic Trading
 
   %h4 Algorithmic Trading Backtesting Framework and Strategy Development
-  %img.pull-right{:alt => "", :src => "/images/bloomberg-terminal.jpg", :width => '300'}
+  %img.img-polaroid.pull-right{:alt => "", :src => "/images/bloomberg-terminal.jpg", :width => '280'}
   %ul
     %li Java JDK 1.6
     %li JUnit
