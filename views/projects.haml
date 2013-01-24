@@ -157,7 +157,7 @@
         %p
           Each state is represented by a key in Redis, with the value being a set of the domain names currently in that state.
         %p
-          Both ADB and RDB persistence methods are used in Redis to ensure that data is not completely lost on reboot, but I do realize that some data may be lost because of the nature of the snapshots.
+          Both AOF and RDB persistence methods are used in Redis to ensure that data is not completely lost on reboot, but I do realize that some data may be lost because of the nature of the snapshots.
         %p
           I also wrote a quick Sinatra control panel so I could see the cardinality and contents of each set of domains in each state, as well as a separate page with the discovered valuable domains to be manually evaluated and purchased.
         %p
