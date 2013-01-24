@@ -6,6 +6,10 @@ h1 {
   margin-top: 24px;
 }
 
+h3 img {
+  margin-bottom: 5px;
+}
+
 @media (max-width: 767px) {
   #card.affix {
     position: static;
