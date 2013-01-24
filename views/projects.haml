@@ -352,31 +352,30 @@
   .project_container
     .row
       .span8
-        %h4 Programming Interview
+        %h4 Worldly Travelers Guide
     .row
       .span3
-        %a{:href => "http://www.programminginterview.com"} programminginterview.com
+        %a{:href => "http://www.worldlytravelersguide.com"} worldlytravelersguide.com
+        %a{:href => "http://www.xiazouke.com"} xiazouke.com (中文)
         %br
-        %img(src="/images/programminginterview.png")
+        %img(src="/images/worldlytravelersguide.png")
         %ul
-          %li Drupal
-          %li MySQL
-          %li SEO
-        %a.btn{:href => "http://www.programminginterview.com"} Visit Site
+          %li WordPress
+          %li Varnish
+        %a.btn{:href => "http://www.worldlytravelersguide.com"} Visit Site
       .span5
         %p
           %em 
             %strong Background
           %br
-          The Ultimate Guide to Programming Interviews was created when I began my job hunt after college. In preparation for the technical interviews commonly given for software developer positions, I collected many of the practice questions that I came across while reviewing. I also included my own coded answers and detailed written explanations for the solutions. Friends asked for the document which I originally kept in a Word file, but it got old emailing them updated versions so I decided to just put all the content on a website.
-        %p According to Google Analytics, the Ultimate Guide to Programming Interviews consistently gets over 6000+ unique visitors per month. Every single visitor is acquired organically - I do no advertising of any sort, including word of mouth. The site is ranked #1 or #2 for the keywords "programming interview" and "programming interviews" and has a Google PageRank of 5.
+          My girlfriend and I are avid travelers; she's compiled a website with detailed itinerary information about our travel destinations for other people to help plan their vacations. There is an English version as well as a Chinese version.
         %p
           %em 
             %strong Technology
           %br
-          The site was developed using
-          %a{:href => "http://www.drupal.org"} Drupal.
-          All interview answers, both code and explanations, were written by myself with the exception of errata credits given on the Contribute page.
+          Since the server is in Texas, I use a Varnish reverse proxy located in California to serve the Chinese site in order to help reduce latency and page load time.
+        %p
+          Additionally, heavy caching is used to prevent WordPress from having to retrieve information from the database.
 
   .project_container
     .row
@@ -449,6 +448,35 @@
           %a{:href => "http://www.bitbucket.org"} Bitbucket.
         %p
           All of the tedious tasks such as downloading and parsing data feeds to obtain up to date prices have been automated using shell scripts run via cronjobs, so after building a site the technology portion will be pretty much hands off so I can focus on customer service and marketing.
+
+  .project_container
+    .row
+      .span8
+        %h4 Programming Interview
+    .row
+      .span3
+        %a{:href => "http://www.programminginterview.com"} programminginterview.com
+        %br
+        %img(src="/images/programminginterview.png")
+        %ul
+          %li Drupal
+          %li MySQL
+          %li SEO
+        %a.btn{:href => "http://www.programminginterview.com"} Visit Site
+      .span5
+        %p
+          %em 
+            %strong Background
+          %br
+          The Ultimate Guide to Programming Interviews was created when I began my job hunt after college. In preparation for the technical interviews commonly given for software developer positions, I collected many of the practice questions that I came across while reviewing. I also included my own coded answers and detailed written explanations for the solutions. Friends asked for the document which I originally kept in a Word file, but it got old emailing them updated versions so I decided to just put all the content on a website.
+        %p According to Google Analytics, the Ultimate Guide to Programming Interviews consistently gets over 6000+ unique visitors per month. Every single visitor is acquired organically - I do no advertising of any sort, including word of mouth. The site is ranked #1 or #2 for the keywords "programming interview" and "programming interviews" and has a Google PageRank of 5.
+        %p
+          %em 
+            %strong Technology
+          %br
+          The site was developed using
+          %a{:href => "http://www.drupal.org"} Drupal.
+          All interview answers, both code and explanations, were written by myself with the exception of errata credits given on the Contribute page.
 
   .project_container
     .row
