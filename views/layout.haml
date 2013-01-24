@@ -5,6 +5,7 @@
   %link{:rel => 'stylesheet', :href => '/css/bootstrap.min.css', :type => 'text/css'}
   %link{:rel => 'stylesheet', :href => '/css/font-awesome.min.css', :type => 'text/css'}
   %link{:rel => 'stylesheet', :href => '/css/style.css', :type => 'text/css'}
+  %link{:rel => 'stylesheet', :href => '/css/print.css', :type => 'text/css', :media => 'print'}
   %link{:href => 'http://fonts.googleapis.com/css?family=Lato', :rel => 'stylesheet', :type => 'text/css'}
 
 %body
@@ -15,10 +16,10 @@
         #bio
           %h3.pagination-centered Szu Han Chang
 
-        #avatar
-          %img.img-polaroid(src="/images/han.jpg")
+          #avatar
+            %img.img-polaroid(src="/images/han.jpg")
 
-        %hr
+          %hr
 
         #menu
           %ul.nav.nav-pills.nav-stacked
@@ -35,8 +36,7 @@
               %a(href='/coursework') 
                 %i.icon-book 
                 Coursework
-
-        %hr
+          %hr
 
         #contact
           %ul.unstyled
