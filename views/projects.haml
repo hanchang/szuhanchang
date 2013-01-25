@@ -109,7 +109,8 @@
           %li Devise
           %li ActiveAdmin
           %li Git
-          %li APIs
+          %li SEOMoz API
+          %li WordPress XMLRPC API
       .span5
         %p
           %em 
@@ -138,11 +139,16 @@
         %ul
           %li Sinatra
           %li Ruby 1.9.3
+          %li Multithreading
           %li Redis
+          %li WebSockets
           %li 
-            %a(href="http://anemone.rubyforge.org") Anemone (web crawler)
+            %a(href="http://webd.is") Webdis
+          %li 
+            %a(href="http://anemone.rubyforge.org") Anemone
           %li Git
-          %li APIs
+          %li SEOMoz API
+          %li WhoAPI
       .span5
         %p 
           %em 
@@ -159,7 +165,9 @@
         %p
           Both AOF and RDB persistence methods are used in Redis to ensure that data is not completely lost on reboot, but I do realize that some data may be lost because of the nature of the snapshots.
         %p
-          I also wrote a quick Sinatra control panel so I could see the cardinality and contents of each set of domains in each state, as well as a separate page with the discovered valuable domains to be manually evaluated and purchased.
+          A threadpool of 128 workers is used to simultaneously run ping / whois on a large amount of domains found by the crawler to determine availability.
+        %p
+          I also wrote a quick Sinatra control panel so I could see in real-time the cardinality and contents of each set of domains in each state, as well as a separate page with the discovered valuable domains to be manually evaluated and purchased. Webdis provides direct JavaScript access to Redis data which is retrieved via long-polling AJAX or WebSockets.
         %p
           The entire system was optimized so that it could run on a 1024 MB Linode VPS - this includes the web crawler.
 
