@@ -105,7 +105,7 @@
         %img(src="/images/pbn.png")
         %ul
           %li Ruby on Rails 3.2.11
-          %li Postgres 9.2
+          %li PostgreSQL 9.2
           %li Devise
           %li ActiveAdmin
           %li Git
@@ -137,24 +137,30 @@
         %br
         %img(src="/images/koba.png")
         %ul
-          %li Sinatra
           %li Ruby 1.9.3
-          %li Multithreading
+          %li Python 2.7
+          %li Sinatra
+          %li Rails 3.2.11
+          %li PostgreSQL 9.1
           %li Redis
           %li WebSockets
           %li 
+            %a(href="http://sidekiq.org") Sidekiq
+          %li 
+            %a(href="http://scrapy.org") Scrapy
+          %li 
             %a(href="http://webd.is") Webdis
           %li 
-            %a(href="http://anemone.rubyforge.org") Anemone
-          %li Git
+            %a(href="https://github.com/javan/whenever") Whenever
+          %li Git (with submodules)
           %li SEOMoz API
-          %li WhoAPI
+          %li Whois
       .span5
         %p 
           %em 
             %strong Background
           %br
-          Koba is the codename for an internal tool I developed in Ruby (not Rails) for crawling the web in order to find valuable domains that have already expired. It connects with a variety of APIs, including SEOMoz, AHrefs.com, and RoboWhois to obtain the data required for automating calculation of estimated domain value.
+          Koba is the codename for an internal tool I developed in Ruby and Python for crawling the web in order to find valuable domains that have already expired. It connects with a variety of APIs, including SEOMoz, AHrefs.com, and various WHOIS services to obtain the data required for automating calculation of estimated domain value.
         %p
           %em 
             %strong Technology
@@ -165,7 +171,7 @@
         %p
           Both AOF and RDB persistence methods are used in Redis to ensure that data is not completely lost on reboot, but I do realize that some data may be lost because of the nature of the snapshots.
         %p
-          A threadpool of 128 workers is used to simultaneously run ping / whois on a large amount of domains found by the crawler to determine availability.
+          Sidekiq workers are used to queue crawl runs and domain availability checking.
         %p
           I also wrote a quick Sinatra control panel so I could see in real-time the cardinality and contents of each set of domains in each state, as well as a separate page with the discovered valuable domains to be manually evaluated and purchased. Webdis provides direct JavaScript access to Redis data which is retrieved via long-polling AJAX or WebSockets.
         %p
@@ -201,7 +207,7 @@
           %br
           Plethura is built using the
           %a(href="http://www.djangoproject.com") Django
-          web application development framework because of its modularity and loosely coupled design. While in the early stages, I'm using SQLite to simplify data storage but will move to Postgres when the complexity or performance requirements demands it.
+          web application development framework because of its modularity and loosely coupled design. While in the early stages, I'm using SQLite to simplify data storage but will move to PostgreSQL.
 
   .project_container
     .row
@@ -372,7 +378,7 @@
         %img(src="/images/worldlytravelersguide.png")
         %ul
           %li WordPress
-          %li Varnish
+          %li nginx reverse proxy
         %a.btn{:href => "http://www.worldlytravelersguide.com"} Visit Site
       .span5
         %p
@@ -384,9 +390,7 @@
           %em 
             %strong Technology
           %br
-          Since the server is in Texas, I use a Varnish reverse proxy located in California to serve the Chinese site in order to help reduce latency and page load time.
-        %p
-          Additionally, heavy caching is used to prevent WordPress from having to retrieve information from the database.
+            Since the WordPress shared host server is in Texas, I use nginx on a VPS located in California as a transparent reverse proxy to serve the Chinese site in order to help reduce latency and page load time. This has resulted in dramatic loading time improvements, from a pathetic 28s load time to just under 10s through a Chinese internet connection for a 180% speedup.
 
   .project_container
     .row
@@ -429,10 +433,10 @@
   .project_container
     .row
       .span8
-        %h4 Trekking Poles Guide
+        %h4 Trekking Poles Pro 
     .row
       .span3
-        %a{:href => "http://www.trekkingpolesguide.com"} trekkingpolesguide.com
+        %a{:href => "http://www.trekkingpolespro.com"} trekkingpolespro.com
         %br
         %img(src="/images/trekkingpolesguide.png")
         %ul
@@ -443,14 +447,15 @@
           %li Cron
           %li Regular Expressions
           %li SEO
+          %li Responsive Layout
           %li Mercurial
-        %a.btn{:href => "http://www.trekkingpolesguide.com"} Visit Site
+        %a.btn{:href => "http://www.trekkingpolespro.com"} Visit Site
       .span5
         %p
           %em 
             %strong Background
           %br
-          Since the Snowboards for Women business model was so successful, I wanted to duplicate it in other markets as well. As a results, I completely rewrote the framework to build Trekking Poles Guide, which does not have the seasonal problem that Snowboards For Women suffers from. This framework is modular enough to be used for virtually any price comparison / review aggregation site, and I plan on using this framework to build a new outdoor gear review site every month.
+          Since the Snowboards for Women business model was so successful, I wanted to duplicate it in other markets as well. As a result, I completely rewrote the framework to build Trekking Poles Guide, which does not have the seasonal problem that Snowboards For Women suffers from. This framework is modular enough to be used for virtually any price comparison / review aggregation site, and I plan on using this framework to build a new outdoor gear review site every month.
         %p
           %em 
             %strong Technology
@@ -492,34 +497,37 @@
   .project_container
     .row
       .span8
-        %h4 Now You Have a Website
+        %h4 szuhanchang.com
     .row
       .span3
-        %a{:href => "http://www.nowyouhaveawebsite.com"} nowyouhaveawebsite.com
+        %a{:href => "http://www.szuhanchang.com"} szuhanchang.com
         %br
-        %img(src="/images/nowyouhaveawebsite.png")
+        %img(src="/images/szuhanchang.png")
         %ul
-          %li WordPress
-          %li MySQL
-          %li SEO
-        %a.btn{:href => "http://www.nowyouhaveawebsite.com"} Visit Site
+          %li Sinatra
+          %li Haml
+          %li Responsive Layout
+          %li nginx reverse proxy
+        %a.btn{:href => "http://www.szuhanchang.com"} Visit Site
       .span5
         %p
           %em 
             %strong Background
           %br
-          Now You Have a Website was founded to solve a growing problem - friends and family would want to start simple websites for their hobbies or budding businesses, but I didn't have time to help them all on their online ventures. As a result, I decided to create a tutorial for setting up a basic website to help out anyone who wanted to dip their toes in the water and give it a shot.
+            This is the site you're looking at right now! I needed a nice professional portfolio to show off my cool projects and work experience, so here we are.
+            (Yes, my favicon is a unicorn.)
         %p
           %em 
             %strong Technology
           %br
-          The site was created in
-          %a{:href => "http://www.wordpress.org"} WordPress
-          and uses
-          %a{:href => "http://www.jquery.com"} jQuery
-          elements including a ported version of
-          %a{:href => "http://leandrovieira.com/projects/jquery/lightbox"} Lightbox
-          and a front page slider to make the UI more interesting and interactive.
+            The site was created using Sinatra and Haml and deployed on Heroku. However, I had some issues with the fact that the single Heroku dyno would idle and 
+            take a long time to boot when someone requested the site for the first time. 
+        %p
+          As a result, I experimented with using nginx as a transparent reverse proxy 
+          to cache the site contents and serve them directly as static pages from nginx. This worked well until I realized I had a ton of coursework that was only
+          hosted on my shared host and my VPS didn't have enough disk space to handle it so I wrote a script to wget mirror the Heroku site onto my shared host as
+          a deployment script. Now the site sits on nginx on my shared host served directly as HTML files.
+
 
   %hr
 
