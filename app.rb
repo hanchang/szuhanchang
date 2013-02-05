@@ -7,14 +7,29 @@ get '/' do
   haml :resume
 end
 
-get '/projects' do
+get '/projects/?' do
   @projects = "active"
   @title = 'Szu Han Chang - Projects'
   @canonical = 'http://www.szuhanchang.com/projects.html'
   haml :projects
 end
 
-get '/coursework' do
+get '/challenges/?' do
+  @challenges = "active"
+  @title = "Szu Han Chang - Programming Challenges"
+  @canonical = "http://www.szuhanchang.com/challenges.html"
+  haml :challenges
+end
+
+get '/challenges/:company/?' do
+  @challenges = "active"
+  @company = params[:company]
+  @title = "Szu Han Chang - Programming Challenges | #{@company}"
+  @canonical = "http://www.szuhanchang.com/challenges/#{@company}.html"
+  haml "challenges/#{@company}".to_sym
+end
+
+get '/coursework/?' do
   @coursework = "active"
   @title = 'Szu Han Chang - Academic Coursework'
   @canonical = 'http://www.szuhanchang.com/coursework.html'
