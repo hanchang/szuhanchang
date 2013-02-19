@@ -39,5 +39,4 @@ end
 get '/bucs/:course/?' do
   @coursework = "active"
   @title = "Szu Han Chang - #{params[:course].upcase} Coursework"
-  haml "bucs/#{params[:course]}".to_sym
 end
