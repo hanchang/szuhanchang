@@ -49,7 +49,7 @@
           %em 
             %strong Background
           %br
-          OneRyng is a VPN service that allows users to surf the web quickly and privately.
+          OneRyng is a VPN service that allows users to surf the web quickly and privately. It takes advantage of particular architectural decisions that make it more difficult to block in countries with internet censorship.
         %p
           OneRyng currently provides both PPTP and L2TP/IPSec protocols for users with support for OpenVPN coming soon. It is integrated with Stripe for payment processing.
         %p
@@ -58,7 +58,7 @@
           %br
           Stripe callbacks are used to determine when to perform particular events such as sending out welcome emails, setting up new username/password combinations, provisioning new VPN servers, etc. 
         %p
-          Currently shell scripts are used to automate new user creation as well as VPN server provisioning but Chef or Puppet will be considered in the future for server provisioning.
+          Currently shell scripts are used to automate new user creation as well as VPN server provisioning but will migrate to Chef or Puppet in the future for server provisioning.
         %p
           VPN servers are monitored using 
           %a(href="https://github.com/sensu/sensu") Sensu
@@ -97,6 +97,87 @@
   .project_container
     .row
       .span8
+        %h4 VIP Domain List 
+    .row
+      .span3
+        (private url)
+        %br
+        %img(src="/images/domainvip.png")
+        %ul
+          %li Rails 3.2.12
+          %li MySQL
+          %li Python 2.7
+          %li Devise
+          %li Redis
+          %li Memcached
+          %li ActiveAdmin
+          %li 
+            %a(href="http://sidekiq.org") Sidekiq
+          %li 
+            %a(href="http://scrapy.org") Scrapy
+          %li 
+            %a(href="https://github.com/javan/whenever") Whenever
+          %li Git
+          %li Whois
+      .span5
+        %p 
+          %em 
+            %strong Background
+          %br
+            The VIP Domain List is the commercialization of the Koba project (see below). It crawls and determines if outbound links from seed urls contain domains that are able to be registered directly from a registrar without having to go through aftermarket auctions or sales. These domains are valuable because they already have inbound links and therefore when set up again, most of them have some PageRank and a better chance to rank.
+        %p 
+          %em 
+            %strong Technology
+          %br
+            Refactoring the original Koba code was necessary to bring this product to market; Anemone as a crawler wasn't stable enough to use in production, so I switched to Scrapy which boasted significant speedup and stability over its Ruby counterpart. After Scrapy retrieves all outbound URLs from seed domains, those domains are stored in Redis. Sidekiq workers are then used to retrieve the domains from Redis and queue domain availability checking. Duplicate jobs are filtered to prevent redundant work and there is a nice control panel to monitor status. Since worker tasks can be run in parallel, the system is extremely fast and scalable.
+          %br
+            The customer facing frontend is a Rails app that uses Devise for authentication and authorization. Regular users can just browse the list of domains available for registration, and can sort by different metrics to determine a domain's value and whether or not it is worthwhile for registration. Admin users can run the crawler, clean up the domain list by removing spam, and administrate users. Data is cached via memcached to improve performance by reducing the need to retrieve information from disk.
+
+  .project_container
+    .row
+      .span8
+        %h4 Koba
+    .row
+      .span3
+        (private url)
+        %br
+        %img(src="/images/koba.png")
+        %ul
+          %li Sinatra
+          %li Ruby 1.9.3
+          %li PostgreSQL 9.1
+          %li Redis
+          %li WebSockets
+          %li 
+            %a(href="http://anemone.rubyforge.org") Anemone
+          %li 
+            %a(href="http://webd.is") Webdis
+          %li Git (with submodules)
+          %li SEOMoz API
+          %li Whois
+      .span5
+        %p 
+          %em 
+            %strong Background
+          %br
+          Koba is the codename for an internal tool I developed in Ruby and Python for crawling the web in order to find valuable domains that have already expired. It connects with a variety of APIs, including SEOMoz, AHrefs.com, and various WHOIS services to obtain the data required for automating calculation of estimated domain value.
+        %p
+          %em 
+            %strong Technology
+          %br
+          The system is designed as a state machine, and each candidate domain moves between various states: when they are identified by the web crawler, data is being pulled, value is being calculated, spam is being filtered, etc.
+        %p
+          Each state is represented by a key in Redis, with the value being a set of the domain names currently in that state.
+        %p
+          Both AOF and RDB persistence methods are used in Redis to ensure that data is not completely lost on reboot, but I do realize that some data may be lost because of the nature of the snapshots.
+        %p
+          I also wrote a quick Sinatra control panel so I could see in real-time the cardinality and contents of each set of domains in each state, as well as a separate page with the discovered valuable domains to be manually evaluated and purchased. Webdis provides direct JavaScript access to Redis data which is retrieved via long-polling AJAX or WebSockets.
+        %p
+          The entire system was optimized so that it could run on a 1024 MB Linode VPS - this includes the web crawler.
+
+  .project_container
+    .row
+      .span8
         %h4 Private Blog Network
     .row
       .span3
@@ -126,56 +207,6 @@
           The PBN uses the WordPress XMLRPC API to post articles to specified blogs after strict manual review by multiple network members. It also uses the SEOMoz API to retrieve domain information to automatically calculate the value of sites entered into the network for further manual review.
         %p
           Devise provides the user authentication functionality and ActiveAdmin provides a convenient interface for administering the sites and performing manual reviews.
-
-  .project_container
-    .row
-      .span8
-        %h4 Koba
-    .row
-      .span3
-        (private url)
-        %br
-        %img(src="/images/koba.png")
-        %ul
-          %li Ruby 1.9.3
-          %li Python 2.7
-          %li Sinatra
-          %li Rails 3.2.12
-          %li PostgreSQL 9.1
-          %li Redis
-          %li WebSockets
-          %li 
-            %a(href="http://sidekiq.org") Sidekiq
-          %li 
-            %a(href="http://scrapy.org") Scrapy
-          %li 
-            %a(href="http://webd.is") Webdis
-          %li 
-            %a(href="https://github.com/javan/whenever") Whenever
-          %li Git (with submodules)
-          %li SEOMoz API
-          %li Whois
-      .span5
-        %p 
-          %em 
-            %strong Background
-          %br
-          Koba is the codename for an internal tool I developed in Ruby and Python for crawling the web in order to find valuable domains that have already expired. It connects with a variety of APIs, including SEOMoz, AHrefs.com, and various WHOIS services to obtain the data required for automating calculation of estimated domain value.
-        %p
-          %em 
-            %strong Technology
-          %br
-          The system is designed as a state machine, and each candidate domain moves between various states: when they are identified by the web crawler, data is being pulled, value is being calculated, spam is being filtered, etc.
-        %p
-          Each state is represented by a key in Redis, with the value being a set of the domain names currently in that state.
-        %p
-          Both AOF and RDB persistence methods are used in Redis to ensure that data is not completely lost on reboot, but I do realize that some data may be lost because of the nature of the snapshots.
-        %p
-          Sidekiq workers are used to queue crawl runs and domain availability checking.
-        %p
-          I also wrote a quick Sinatra control panel so I could see in real-time the cardinality and contents of each set of domains in each state, as well as a separate page with the discovered valuable domains to be manually evaluated and purchased. Webdis provides direct JavaScript access to Redis data which is retrieved via long-polling AJAX or WebSockets.
-        %p
-          The entire system was optimized so that it could run on a 1024 MB Linode VPS - this includes the web crawler.
 
   .project_container
     .row
@@ -220,6 +251,7 @@
         %br
         %img(src="/images/modelmaker.png")
         %ul
+          %li PHP
           %li CodeIgniter 2
           %li i18n and l10n
           %li File Uploading
@@ -258,6 +290,7 @@
         %br
         %img(src="/images/fuelforhire.png")
         %ul
+          %li PHP
           %li CodeIgniter
           %li MySQL
           %li Subversion
@@ -311,7 +344,30 @@
           %br
           At first I had difficulty selecting charitable causes but after some research on <a href="http://www.charitynavigator.org">Charity Navigator</a> I decided to pick the <a href="http://rainforestalliance.org/">Rainforest Alliance</a> and <a href="http://www.charitywater.org/">Charity: Water</a>. 
 
-
+  .project_container
+    .row
+      .span8
+        %h4 
+          Tokogae
+    .row
+      .span3
+        %a(href="http://www.tokogae.com") tokogae.com
+        %br
+        %img(src="/images/tokogae.png")
+        %br
+        %ul
+          %li PHP
+          %li Ajax
+          %li Google
+          %li Philanthropy
+      .span5
+        %p
+          %em 
+            %strong Background
+          %br
+          Tokogae stands for the "Tree of Knowledge of Good and Evil" and is a search engine that donates its proceeds to a charity of the user's choice. It basically just leverages the Google private search and I also created this back in college.
+        %p
+          It uses an Ajax interface to allow the user to select the charity they want proceeds to go towards and stores their selection in a cookie.
   %hr
 
   / Mobile
@@ -430,6 +486,7 @@
         %br
         %img(src="/images/snowboardsforwomen.png")
         %ul
+          %li PHP
           %li CodeIgniter
           %li MySQL
           %li Beautiful Soup
@@ -468,6 +525,7 @@
         %br
         %img(src="/images/trekkingpolespro.png")
         %ul
+          %li PHP
           %li CodeIgniter
           %li MySQL
           %li Data Feed Parsing
@@ -503,6 +561,7 @@
         %br
         %img(src="/images/programminginterview.png")
         %ul
+          %li PHP
           %li Drupal
           %li MySQL
           %li SEO
@@ -533,6 +592,7 @@
         %img(src="/images/szuhanchang.png")
         %ul
           %li Sinatra
+          %li Ruby 1.9.3
           %li Haml
           %li Responsive Layout
           %li nginx reverse proxy
