@@ -23,6 +23,7 @@
   %a{:name => "web"}
   %h3.pagination-centered Web Applications
 
+  %a{:name => "oneryng"}
   .project_container
     .row
       .span8
@@ -37,6 +38,7 @@
           %li Postgres 9.2
           %li Heroku
           %li Git
+          %li Nginx
           %li SSL
           %li Stripe for payment processing
           %li Mandrill for email
@@ -67,36 +69,7 @@
           %a(href="https://github.com/sensu/sensu") Sensu
           since it allows dynamic discovery of new nodes. Nagios requires that a static environment to perform monitoring, which is not feasible for my production setup because a new VPN server may be provisioned automatically at any time.
 
-  .project_container
-    .row
-      .span8
-        %h4 
-          BitXF
-          %small cofounder
-    .row
-      .span3
-        %a(href="http://www.bitxf.com") bitxf.com
-        %br
-        %img(src="/images/bitxf.png")
-        %br
-        %a.btn(href="https://www.bitxf.com") Visit Site
-      .span5
-        %p
-          %em 
-            %strong Background
-          %br
-          BitXF is a Bitcoin marketplace created to serve the Chinese demographic. It accepts deposits and withdrawals from Taobao and Alipay, the eBay and Paypal of China.
-        %p
-          Security is a huge concern for BitXF, which is why the vast majority of Bitcoins are held in cold storage (offline).
-        %p
-          %em
-            %strong Technology
-          %br
-          Although I don't believe in security through obscurity, my cofounder and I would still prefer to keep the implementation details of BitXF private to add an extra layer of protection.
-        %p
-          Please ask in-person for more details.
-
-
+  %a{:name => "vipdomainlist"}
   .project_container
     .row
       .span8
@@ -136,6 +109,7 @@
           %br
             The customer facing frontend is a Rails app that uses Devise for authentication and authorization. Regular users can just browse the list of domains available for registration, and can sort by different metrics to determine a domain's value and whether or not it is worthwhile for registration. Admin users can run the crawler, clean up the domain list by removing spam, and administrate users. Data is cached via memcached to improve performance by reducing the need to retrieve information from disk.
 
+  %a{:name => "koba"}
   .project_container
     .row
       .span8
@@ -178,6 +152,37 @@
         %p
           The entire system was optimized so that it could run on a 1024 MB Linode VPS - this includes the web crawler.
 
+  %a{:name => "bitxf"}
+  .project_container
+    .row
+      .span8
+        %h4 
+          BitXF
+          %small cofounder
+    .row
+      .span3
+        %a(href="http://www.bitxf.com") bitxf.com
+        %br
+        %img(src="/images/bitxf.png")
+        %br
+        %a.btn(href="https://www.bitxf.com") Visit Site
+      .span5
+        %p
+          %em 
+            %strong Background
+          %br
+          BitXF is a Bitcoin marketplace created to serve the Chinese demographic. It accepts deposits and withdrawals from Taobao and Alipay, the eBay and Paypal of China.
+        %p
+          Security is a huge concern for BitXF, which is why the vast majority of Bitcoins are held in cold storage (offline).
+        %p
+          %em
+            %strong Technology
+          %br
+          Although I don't believe in security through obscurity, my cofounder and I would still prefer to keep the implementation details of BitXF private to add an extra layer of protection.
+        %p
+          Please ask in-person for more details.
+
+  %a{:name => "pbn"}
   .project_container
     .row
       .span8
@@ -212,6 +217,7 @@
         %p
           Devise provides the user authentication functionality and ActiveAdmin provides a convenient interface for administering the sites and performing manual reviews.
 
+  %a{:name => "plethura"}
   .project_container
     .row
       .span8
@@ -244,6 +250,7 @@
           %a(href="http://www.djangoproject.com") Django
           web application development framework because of its modularity and loosely coupled design. While in the early stages, I'm using SQLite to simplify data storage but will move to PostgreSQL.
 
+  %a{:name => "modelmaker"}
   .project_container
     .row
       .span8
@@ -281,7 +288,7 @@
           %a(href="http://www.CodeIgniter.com") CodeIgniter
           was the PHP MVC framework chosen for this application because of my previous familiarity (see below). Internationalization was required due to the multilingual nature of the site. Selenium tests were underway for quality assurance, and a continuous integration process was in development.
 
-
+  %a{:name => "fuelforhire"}
   .project_container
     .row
       .span8
@@ -321,6 +328,7 @@
           %a{:href => "http://www.glassdoor.com", :rel => "nofollow"} Glassdoor
           had dominated the market.
 
+  %a{:name => "charity"}
   .project_container
     .row
       .span8
@@ -348,6 +356,7 @@
           %br
           At first I had difficulty selecting charitable causes but after some research on <a href="http://www.charitynavigator.org">Charity Navigator</a> I decided to pick the <a href="http://rainforestalliance.org/">Rainforest Alliance</a> and <a href="http://www.charitywater.org/">Charity: Water</a>. 
 
+  %a{:name => "tokogae"}
   .project_container
     .row
       .span8
@@ -378,6 +387,7 @@
   %a{:name => "mobile"}
   %h3.pagination-centered Mobile Application Development
 
+  %a{:name => "medabbrev"}
   .project_container
     .row
       .span8
@@ -401,6 +411,7 @@
   %a{:name => "open"}
   %h3.pagination-centered Open Source Contributions
 
+  %a{:name => "friar"}
   .project_container
     .row
       .span8
@@ -420,6 +431,7 @@
         %p
           %a.btn{:href => "http://www.friarframework.com"} Friar Framework Website
  
+  %a{:name => "mozilla"}
   .project_container
     .row
       .span8
@@ -434,6 +446,7 @@
           %a{:href => "http://www.szuhanchang.com/mozilla"} http://www.szuhanchang.com/mozilla
         %p Find me on Mozilla's #introduction IRC channel, I'm frequently there!
  
+  %a{:name => "horde"}
   .project_container
     .row
       .span8
@@ -454,6 +467,7 @@
   %a{:name => "content"}
   %h3.pagination-centered Content Sites
 
+  %a{:name => "worldlytravelersguide"}
   .project_container
     .row
       .span8
@@ -480,6 +494,7 @@
           %br
             Since the WordPress shared host server is in Texas, I use nginx on a VPS located in California as a transparent reverse proxy to serve the Chinese site in order to help reduce latency and page load time. This has resulted in dramatic loading time improvements, from a pathetic 28s load time to just under 10s through a Chinese internet connection for a 180% speedup.
 
+  %a{:name => "snowboardsforwomen"}
   .project_container
     .row
       .span8
@@ -519,6 +534,7 @@
           %a{:href => "http://www.snowboardsforwomen.com/recommend"} snowboard recommendation engine
           that evaluates a user's snowboarding preferences and automatically sends a delayed email containing recommendations suitable for their style and body shape.
 
+  %a{:name => "trekkingpolespro"}
   .project_container
     .row
       .span8
@@ -555,6 +571,7 @@
         %p
           All of the tedious tasks such as downloading and parsing data feeds to obtain up to date prices have been automated using shell scripts run via cronjobs, so after building a site the technology portion will be pretty much hands off so I can focus on customer service and marketing.
 
+  %a{:name => "programminginterview"}
   .project_container
     .row
       .span8
@@ -585,6 +602,7 @@
           %a{:href => "http://www.drupal.org"} Drupal.
           All interview answers, both code and explanations, were written by myself with the exception of errata credits given on the Contribute page.
 
+  %a{:name => "szuhanchang"}
   .project_container
     .row
       .span8
