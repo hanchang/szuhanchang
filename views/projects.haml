@@ -23,6 +23,48 @@
   %a{:name => "web"}
   %h3.pagination-centered Web Applications
 
+  %a{:name => "hellohero"}
+  .project_container
+    .row
+      .span8
+        %h4 
+          HelloHero
+          %small cofounder
+    .row
+      .span3
+        %a(href="http://www.hellohero.co") hellohero.co
+        %br
+        %img(src="/images/hellohero.png")
+        %ul
+          %li Ruby on Rails 3.2.12
+          %li Postgres 9.2
+          %li Heroku
+          %li Git
+          %li Devise
+          %li ActiveAdmin
+          %li Apache
+          %li Twitter API
+        %a.btn(href="http://www.hellohero.co") Visit Site
+
+      .span5
+        %p
+          %em 
+            %strong Background
+          %br
+          HelloHero was created from scratch in 72 hours during the <a href="http://www.launchhackathon.com">2013 Launch Hackathon</a> in San Francisco.
+        %p
+          We allow people to bid for an hour-long meeting with their favorite celebrity and donate the proceeds to a charity of the celebrity's choice.
+        %p
+          The team consisted of 3.5 members since one person dropped out during the hackathon. We also wrote, practiced, and delivered a 2 minute pitch to a panel of VC / angel judges.
+        %p
+          %em 
+            %strong Technology
+          %br
+          We take advantage of the Twitter API to grab verified users as the seed data set. 
+          <a href="http://twitter.github.com/typeahead.js">Twitter's typeahead.js</a> library handles the search bar autocompletion.
+        %p
+          Heroku hosts the site and an Apache transparent reverse proxy allows for a free custom domain.
+
   %a{:name => "oneryng"}
   .project_container
     .row
@@ -32,7 +74,8 @@
       .span3
         %a(href="https://www.oneryng.com") oneryng.com
         %br
-        %img(src="/images/oneryng.png")
+        %a(href="https://www.oneryng.com") 
+          %img(src="/images/oneryng.png")
         %ul
           %li Ruby on Rails 3.2.12
           %li Postgres 9.2
@@ -163,7 +206,8 @@
       .span3
         %a(href="http://www.bitxf.com") bitxf.com
         %br
-        %img(src="/images/bitxf.png")
+        %a(href="http://www.bitxf.com")
+          %img(src="/images/bitxf.png")
         %br
         %a.btn(href="https://www.bitxf.com") Visit Site
       .span5
@@ -416,7 +460,7 @@
     .row
       .span8
         %h4 
-          %a(href="http://www.friarframework.com") Friar Framework (Android)
+          Friar Framework
     .row
       .span3
         %img(src="/images/friar-robot.png")
@@ -427,7 +471,7 @@
           %a{:href => "http://www.programminginterview.com"} programminginterview.com
           website content on both iOS and Android but only found a framework for iOS. As a result, I ported the
           %a{:href => "http://www.bakerframework.com"} Baker Framework
-          over to Android and called it Friar.
+          over to Android and called it Friar Framework (it's a pun, get it?).
         %p
           %a.btn{:href => "http://www.friarframework.com"} Friar Framework Website
  
@@ -436,13 +480,15 @@
     .row
       .span8
         %h4
-          %a(href="http://www.mozilla.org") Mozilla (Desktop)
+          Mozilla Firefox
     .row
       .span3
         %img(src="/images/mozilla_logo.png")
       .span5
         %p 
-          I am a Mozilla contributor who believes in open source and enjoys donating my occasional spare time to fix bugs in Firefox. To see a list of all the bugs I've contributed to so far, check out:
+          I am a Mozilla contributor who believes in open source and enjoys donating my occasional spare time to fix bugs in Firefox. I'm also super interested in FirefoxOS. 
+        %p
+          To see a list of all the bugs I've contributed to so far, check out:
           %a{:href => "http://www.szuhanchang.com/mozilla"} http://www.szuhanchang.com/mozilla
         %p Find me on Mozilla's #introduction IRC channel, I'm frequently there!
  
@@ -451,13 +497,17 @@
     .row
       .span8
         %h4 
-          %a(href="http://www.horde.org") Horde Framework
+          Horde Framework
     .row
       .span3
         %img(src="/images/horde3.png")
       .span5
         %p 
-          During the summer between my freshman and sophomore years, I applied and entered the Google Summer of Code program, earning a $7500 grant to work on the Sedule Project, a module in the Horde Framework to help managers create and edit schedules for employee shifts based on their availability. 
+          During the summer between my freshman and sophomore years of college, I applied and was accepted into the first ever <a href="http://developers.google.com/open-source/soc">Google Summer of Code</a> program to work on the Sedule Project, a module in the <a href="http://www.horde.org">Horde Framework</a> to help managers schedule employee shifts based on their availability. 
+        %p
+          Horde is a very popular open source framework best known for providing a modular, customizable webmail interface.
+        %p
+          My successful completion of the project earned me a $7500 grant from Google and a $2500 grant to Horde.
         %p 
           %a(href="http://wiki.horde.org/Project/Sedule") wiki.horde.org/project/sedule
 
