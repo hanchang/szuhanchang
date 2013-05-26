@@ -5,9 +5,10 @@ Professional Portfolio and Programming Blog of Szu Han Chang
 ## Deployment
 Basically, I take the lazy way out and use wget to generate static HTML.
 
-The site is first hosted on Heroku as a Sinatra app.  
-Then I run `wget` which spiders the site as static HTML.
+First run the site locally via `bundle exec ruby app.rb`.
 
-To kick off this process, run the `deploy.sh` script on the host.
+Then run `sh deploy.sh` which uses wget and spiders the site into static HTML.
+
+Finally, rsync the site directory to the host.
 
 Note: The `coursework/` data is all on the host.
