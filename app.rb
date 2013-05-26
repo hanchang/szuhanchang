@@ -3,21 +3,21 @@ require 'sinatra'
 
 get '/' do
   @resume = "active"
-  @title = 'Szu Han Chang - Resume'
+  @title = 'Resume | Szu Han Chang'
   @canonical = 'http://www.szuhanchang.com/'
   haml :resume
 end
 
 get '/projects/?' do
   @projects = "active"
-  @title = 'Szu Han Chang - Projects'
+  @title = 'Projects | Szu Han Chang'
   @canonical = 'http://www.szuhanchang.com/projects.html'
   haml :projects
 end
 
 get '/challenges/?' do
   @challenges = "active"
-  @title = "Szu Han Chang - Programming Challenges"
+  @title = "Programming Challenges | Szu Han Chang"
   @canonical = "http://www.szuhanchang.com/challenges.html"
   haml :challenges
 end
@@ -25,19 +25,19 @@ end
 get '/challenges/:company/?' do
   @challenges = "active"
   @company = params[:company]
-  @title = "Szu Han Chang - Programming Challenges | #{@company}"
+  @title = "#{@company} Programming Challenges | Szu Han Chang"
   @canonical = "http://www.szuhanchang.com/challenges/#{@company}.html"
   haml "challenges/#{@company}".to_sym
 end
 
 get '/coursework/?' do
   @coursework = "active"
-  @title = 'Szu Han Chang - Academic Coursework'
+  @title = 'Academic Coursework | Szu Han Chang'
   @canonical = 'http://www.szuhanchang.com/coursework.html'
   haml :coursework
 end
 
 get '/bucs/:course/?' do
   @coursework = "active"
-  @title = "Szu Han Chang - #{params[:course].upcase} Coursework"
+  @title = "#{params[:course].upcase} Coursework | Szu Han Chang"
 end
