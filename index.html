@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
+  <head>
+    <meta charset='utf-8'>
+    <link href='//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <link href='//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css' rel='stylesheet' type='text/css'>
+    <link href='/css/style.css' rel='stylesheet' type='text/css'>
+    <link href='/css/print.css' media='print' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link rel='canonical'>
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-3354361-40']);
+      _gaq.push(['_trackPageview']);
+      
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <title>
+      
+    </title>
+  </head>
+  <body>
+    <div class='container'>
+      <div class='row'>
+        <div class='well affix span3' id='card'>
+          <div id='bio'>
+            <h3 class='pagination-centered'>Szu Han Chang</h3>
+            <div id='avatar'>
+              <img class='img-polaroid' src='/images/han.jpg'>
+            </div>
+            <hr>
+          </div>
+          <div id='menu'>
+            <ul class='nav nav-pills nav-stacked'>
+              <li class='nav-header'>Navigation Menu</li>
+              <li>
+                <a href='/'>
+                  <i class='icon-tasks'></i>
+                  Resume
+                </a>
+              </li>
+              <li>
+                <a href='/projects'>
+                  <i class='icon-beaker'></i>
+                  Projects
+                </a>
+              </li>
+              <li>
+                <a href='/blog'>
+                  <i class='icon-pencil'></i>
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a href='/coursework'>
+                  <i class='icon-book'></i>
+                  Coursework
+                </a>
+              </li>
+            </ul>
+            <hr>
+          </div>
+          <div id='contact'>
+            <ul class='unstyled'>
+              <li>
+                <i class='icon-home'></i>
+                San Francisco
+              </li>
+              <li>
+                <i class='icon-phone'></i>
+                +1 (904) 748-9119
+              </li>
+              <li>
+                <i class='icon-globe'></i>
+                <a href='http://www.szuhanchang.com'>www.szuhanchang.com</a>
+              </li>
+              <li>
+                <i class='icon-inbox'></i>
+                <a href='mailto:szu.han.chang@gmail.com'>szu.han.chang@gmail.com</a>
+              </li>
+              <li>
+                <i class='icon-linkedin'></i>
+                <a href='http://www.linkedin.com/in/szuhanchang'>linkedin.com/in/szuhanchang</a>
+              </li>
+              <li>
+                <i class='icon-twitter'></i>
+                <a href='http://www.twitter.com/hanchang'>@hanchang</a>
+              </li>
+              <li>
+                <i class='icon-github'></i>
+                <a href='http://www.github.com/hanchang'>github.com/hanchang</a>
+              </li>
+              <li>
+                <i class='icon-laptop'></i>
+                <a href='http://www.speakerdeck.com/hanchang'>speakerdeck.com/hanchang</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='span3'>
+          <br>
+        </div>
+        <div class='span9'>
+          <div class='content'>
+            <div id='resume'>
+  <h1 class='pagination-centered'>Resume</h1>
+  <hr>
+  <p class='lead'>
+    I'm Han, an entrepreneurial software engineer who is passionate about helping innovative companies <u>rapidly ship features</u> with <em>real business value</em> that <em>delights their clients</em> by understanding customer needs and implementing solutions through <strong>high quality code and architecture</strong>.
+  </p>
+  <h3>
+    <img src='/images/okcupidlabs.png'>
+    Fullstack Rails Engineer
+    <small>
+      <strong>
+        <a href='http://www.okcupidlabs.com'>OkCupid Labs</a>
+      </strong>
+    </small>
+    <span class='pull-right'>
+      <span class='label label-important'>San Francisco</span>
+      <span class='label label-info'>Apr 2013 - Current</span>
+    </span>
+  </h3>
+  <p>
+    Created a Sinatra analytics app with <a href="http://d3js.org">D3 visualizations</a> backed by MongoDB. The Rails application sends analytics data via RabbitMQ and the Sinatra app receives, processes, and inserts them into Mongo. The Sinatra app facilitates querying into large volumes of data quickly for insights into site performance and user behavior. The project was completed within first two weeks of start date.
+  </p>
+  <p>
+    Deployed the Sinatra analytics app to AWS EC2 via custom written Chef recipe.
+  </p>
+  <p>
+    Implemented a new profile onboarding experience for <a href="http://www.kiss.com">Kiss.com</a>, which has 10+ million users.
+  </p>
+  <p>
+    Heavily refactored the Kiss.com User model to DRY up repetitive code using metaprogramming.
+  </p>
+  <p>
+    Proposed migrating Resque workers (processes) to Sidekiq workers (threads) to reduce memory consumption, which also reduces monthly AWS costs.
+  </p>
+  <ul class='breadcrumb'>
+    <li>
+      Tech Stack:
+      <span class='divider'>&nbsp;</span>
+    </li>
+    <li>
+      <span class='badge badge-success'>Rails 3.2</span>
+      <span class='divider'>/</span>
+    </li>
+    <li>
+      <span class='badge badge-success'>AWS</span>
+      <span class='divider'>/</span>
+    </li>
+    <li>
+      <span class='badge badge-success'>Chef</span>
+      <span class='divider'>/</span>
+    </li>
+    <li>
+      <span class='badge badge-success'>MySQL+PostgreSQL</span>
+      <span class='divider'>/</span>
+    </li>
+    <li>
+      <span class='badge badge-success'>Resque</span>
+    </li>
+  </ul>
+  <h3>
+    <img src='/images/oneryng.ico'>
+    Founder
+    <small>
+      <strong>
+        <a href='https://www.oneryng.com'>OneRyng</a>
+      </strong>
+    </small>
+    <span class='pull-right'>
+      <span class='label label-important'>Shanghai</span>
+      <span class='label label-info'>Nov 2012 - Current</span>
+    </span>
+  </h3>
+  <p>
+    Singlehandedly architected, designed, coded, and launched OneRyng in &lt; 2 months, part-time.
+  </p>
+  <p>
+    Setup nginx reverse proxy as SSL endpoint to ensure secure connection to Heroku with custom domain and to improve page load times by serving cached static content.
+  </p>
+  <p>
+    Developed automated processes for spinning up new VPN servers, managing user accounts, and monitoring server health.
+  </p>
+  <p>
+    Integrated with <a href="https://www.stripe.com">Stripe</a> for recurring credit card payment processing.
+  </p>
+  <p>
+    Integrated with <a href="http://www.mandrill.com">Mandrill</a> for email notifications.
+  </p>
+  <p>
+    Streamlined customer support workflows to reduce support load and improve customer satisfaction.
+  </p>
+  <p>
+    Connect with expat businesses in China for marketing outreach and bizdev.
+  </p>
+  <ul class='breadcrumb'>
+    <li>
+      Tech Stack:
+      <span class='divider'>&nbsp;</span>
+    </li>
+    <li>
+      <span class='badge badge-success'>Rails 3.2.12</span>
+      <span class='divider'>/</span>
+    </li>
+    <li>
+      <span class='badge badge-success'>Heroku</span>
+      <span class='divider'>/</span>
+    </li>
+    <li>
+      <span class='badge badge-success'>Nginx+SSL</span>
+      <span class='divider'>/</span>
+    </li>
+    <li>
+      <span class='badge badge-success'>PostgreSQL</span>
+      <span class='divider'>/</span>
+    </li>
+    <li>
+      <span class='badge badge-success'>PPTP/L2TP VPN</span>
+    </li>
+  </ul>
+  <h3>
+    <img src='/images/tnc.png'>
+    Senior Web Developer
+    <small>
+      <strong>
+        <a href='http://www.thenetcircle.com'>TheNetCircle</a>
+      </strong>
+    </small>
+    <span class='pull-right'>
+      <span class='label label-important'>Shanghai</span>
+      <span class='label label-info'>June 2011 - Oct 2012</span>
+    </span>
+  </h3>
+  <p>
+    Spearheaded and implemented functional testing as a requirement for Scrum story completion via Behat and Jenkins - for <em>two</em> projects, reducing the number of bugs filed each sprint by 50%.
+  </p>
+  <p>
+    Streamlined deployment from multiple shell scripts and commands into a one-click button on Jenkins, complete with test run results, reporting, and notifications.
+  </p>
+  <p>
+    Pioneered the use of static code analysis via <a href="http://www.sonarsource.org">Sonar</a> to find compile-time (interpret-time for PHP) bugs.
+  </p>
+  <p>
+    Identified and restructured slow MySQL queries to improve application performance.
+  </p>
+  <p>
+    Set up, customized, and maintained an instance of <a href="http://hubot.github.com">Hubot</a> for broadcasting build and deploy statuses (as well as funny jokes and pictures) on company IRC channels.
+  </p>
+  <p>
+    Responsible for interviewing candidates. Created a semi-automated system for giving candidates written and coding tests to weed out unqualified applicants, saving interviewers 10 hours/week on average.
+  </p>
+  <p>
+    Successfully convinced management to reboot a flailing 3+ year project that had no growth plan which was costing the company €X0,000 EUR/month. See the presentation at SpeakerDeck.
+  </p>
+  <ul class='breadcrumb'>
+    <li>
+      Tech Stack:
+      <span class='divider'>&nbsp;</span>
+    </li>
+    <li>
+      <span class='badge badge-success'>Scrum</span>
+      <span class='divider'>/</span>
+    </li>
+    <li>
+      <span class='badge badge-success'>Nginx, PHP-FPM, APC</span>
+      <span class='divider'>/</span>
+    </li>
+    <li>
+      <span class='badge badge-success'>Memcached</span>
+      <span class='divider'>/</span>
+    </li>
+    <li>
+      <span class='badge badge-success'>MySQL</span>
+      <span class='divider'>/</span>
+    </li>
+    <li>
+      <span class='badge badge-success'>RabbitMQ</span>
+    </li>
+  </ul>
+  <h3>
+    <img src='/images/lime.png'>
+    Software Engineer
+    <small>
+      <strong>
+        <a href='http://www.limebrokerage.com'>Lime Brokerage</a>
+      </strong>
+    </small>
+    <span class='pull-right'>
+      <span class='label label-important'>Boston</span>
+      <span class='label label-info'>February 2009 - May 2010</span>
+    </span>
+  </h3>
+  <p>
+    Architected and programmed a real time risk metric calculation engine in C++ used to process a variety of equities, futures, and options market metrics used in analyzing performance and risk of automated trading algorithms for each brokerage account. This engine then communicated the metrics (up to 1000/sec) via a Lime proprietary RPC messaging system to the control plane.
+  </p>
+  <p>
+    Designed and developed PULP, a custom programming language that incorporates basic elements of equities measurements (e.g. open order value, current buying power, shares traded, etc.) combined with mathematical and boolean operators to build customizable risk metrics on demand that broadcasts the values to clients in real time. PULP used ANTLR 3 for parsing and lexing.
+  </p>
+  <p>
+    Developed the client side portlet in Flex for viewing the real time risk calculation metrics. The data was obtained from the control plane configuration via our web services backend implemented in Java and sent to the Flex clientside frontend via AMF. The data was requested using a GUI that generated the PULP code necessary to calculate the metric.
+  </p>
+  <p>
+    Worked with J2EE using a custom MVC architecture through JBoss/Tomcat, Hibernate + MySQL for data store, and Adobe Flex for front end visualization to create portlets for clients to access various account, market, and risk data.
+  </p>
+  <p>
+    Experimented with CUDA, an nVidia architecture used to take advantage of the parallel processing power of GPUs to reduce computational running time.
+  </p>
+  <p>
+    Prepared and demonstrated presentations of this technology to both internal users and potential customers.
+  </p>
+  <ul class='breadcrumb'>
+    <li>
+      Tech Stack:
+      <span class='divider'>&nbsp;</span>
+    </li>
+    <li>
+      <span class='badge badge-success'>Java</span>
+      <span class='divider'>/</span>
+    </li>
+    <li>
+      <span class='badge badge-success'>J2EE</span>
+      <span class='divider'>/</span>
+    </li>
+    <li>
+      <span class='badge badge-success'>C++</span>
+      <span class='divider'>/</span>
+    </li>
+    <li>
+      <span class='badge badge-success'>Flex</span>
+      <span class='divider'>/</span>
+    </li>
+    <li>
+      <span class='badge badge-success'>MySQL</span>
+      <span class='divider'>/</span>
+    </li>
+    <li>
+      <span class='badge badge-success'>Hibernate</span>
+      <span class='divider'>/</span>
+    </li>
+    <li>
+      <span class='badge badge-success'>ANTLR</span>
+    </li>
+  </ul>
+  <h3>
+    <img src='/images/mitll.png'>
+    Satellite Software Engineer Intern
+    <small>
+      <strong>
+        <a href='http://www.ll.mit.edu'>MIT Lincoln Labs</a>
+      </strong>
+    </small>
+    <span class='pull-right'>
+      <span class='label label-important'>Boston</span>
+      <span class='label label-info'>Summer 2007</span>
+    </span>
+  </h3>
+  <p>
+    Received government security clearance to work on "Secret" level classified projects.
+  </p>
+  <p>
+    Designed and implemented a filter for separating satellite messages by protocol and content type, cutting debug time by 300% by only showing relevant acknowledge and error messages.
+  </p>
+  <p>
+    Added datasets consisting of an XML/Java GUI frontend for input and a C++ backend for various satellite protocols in a production environment.
+  </p>
+  <ul class='breadcrumb'>
+    <li>
+      Tech Stack:
+      <span class='divider'>&nbsp;</span>
+    </li>
+    <li>
+      <span class='badge badge-success'>Java</span>
+      <span class='divider'>/</span>
+    </li>
+    <li>
+      <span class='badge badge-success'>Swing</span>
+      <span class='divider'>/</span>
+    </li>
+    <li>
+      <span class='badge badge-success'>C++</span>
+      <span class='divider'>/</span>
+    </li>
+    <li>
+      <span class='badge badge-success'>XML</span>
+    </li>
+  </ul>
+  <hr>
+  <h2 class='pagination-centered'>Education</h2>
+  <h3>
+    <img src='/images/bu.png'>
+    Boston University
+    <small>
+      <strong>Bachelor's and Master's in Computer Science</strong>
+    </small>
+    <span class='pull-right'>
+      <span class='label label-info'>2004 - 2008</span>
+    </span>
+  </h3>
+  <p>Completed the BA/MA Computer Science Program, which grants both a bachelor's and master's degree simultaneously upon graduation, in just 4 years.</p>
+  <p>Graduated Cum Laude; selected by faculty and served as the Boston University Computer Science student graduation speaker for the class of 2008.</p>
+  <hr>
+  <h2 class='pagination-centered'>Administrivia</h2>
+  <div class='row'>
+    <div class='span3'>
+      <h4>Languages</h4>
+      <p>
+        <img src='/images/png/gb.png'>
+        Native English
+        <br>
+        <img src='/images/png/cn.png'>
+        Fluent in Mandarin Chinese
+      </p>
+    </div>
+    <div class='span5'>
+      <h4>Citizenship</h4>
+      <p>
+        <img src='/images/png/us.png'>
+        Dual United States and Taiwan (ROC) citizen.
+        <br>
+        <img src='/images/png/tw.png'>
+        Legally able to work in the USA, no H1B visa required!
+      </p>
+    </div>
+  </div>
+</div>
+
+            <footer class='footer'>
+              &copy;
+              2013
+              Szu Han Chang
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

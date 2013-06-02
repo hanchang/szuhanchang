@@ -1,0 +1,61 @@
+@media print {
+  h1.pagination-centered {
+    display: none;
+  }
+  
+  hr {
+    display: none;
+  }
+
+  .well.affix.span3 {
+    width: 100%;
+  }
+
+  .span9 {
+    width: 75%;
+    margin: 0 64px;
+  }
+
+  footer {
+    display: none;
+  }
+
+  #card {
+    position: fixed;  
+    padding-bottom: 12px;
+    margin-left: 64px;
+  }
+
+  #card hr {
+    display: none;
+  }
+
+  #bio {
+    float: left;
+  }
+
+  #contact {
+    float: right;
+    margin: 24px 0 0 36px;
+  }
+
+  .content {
+    margin: 0;
+  }
+
+  #menu {
+    display: none;
+  }
+
+  /* Show URL */
+  .content a:link, a:visited {
+    background: transparent; color:#333; text-decoration:none;
+  }
+  .content a:link[href^="http://"]:after, a[href^="http://"]:visited:after {
+    content: " (" attr(href) ") "; 
+    font-size: 11px;
+  }
+  .content a[href^="http://"] {
+    color: #000;
+  } 
+}

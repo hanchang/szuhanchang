@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
+  <head>
+    <meta charset='utf-8'>
+    <link href='//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <link href='//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css' rel='stylesheet' type='text/css'>
+    <link href='/css/style.css' rel='stylesheet' type='text/css'>
+    <link href='/css/print.css' media='print' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link rel='canonical'>
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-3354361-40']);
+      _gaq.push(['_trackPageview']);
+      
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <title>
+      
+    </title>
+  </head>
+  <body>
+    <div class='container'>
+      <div class='row'>
+        <div class='well affix span3' id='card'>
+          <div id='bio'>
+            <h3 class='pagination-centered'>Szu Han Chang</h3>
+            <div id='avatar'>
+              <img class='img-polaroid' src='/images/han.jpg'>
+            </div>
+            <hr>
+          </div>
+          <div id='menu'>
+            <ul class='nav nav-pills nav-stacked'>
+              <li class='nav-header'>Navigation Menu</li>
+              <li>
+                <a href='/'>
+                  <i class='icon-tasks'></i>
+                  Resume
+                </a>
+              </li>
+              <li>
+                <a href='/projects'>
+                  <i class='icon-beaker'></i>
+                  Projects
+                </a>
+              </li>
+              <li>
+                <a href='/blog'>
+                  <i class='icon-pencil'></i>
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a href='/coursework'>
+                  <i class='icon-book'></i>
+                  Coursework
+                </a>
+              </li>
+            </ul>
+            <hr>
+          </div>
+          <div id='contact'>
+            <ul class='unstyled'>
+              <li>
+                <i class='icon-home'></i>
+                San Francisco
+              </li>
+              <li>
+                <i class='icon-phone'></i>
+                +1 (904) 748-9119
+              </li>
+              <li>
+                <i class='icon-globe'></i>
+                <a href='http://www.szuhanchang.com'>www.szuhanchang.com</a>
+              </li>
+              <li>
+                <i class='icon-inbox'></i>
+                <a href='mailto:szu.han.chang@gmail.com'>szu.han.chang@gmail.com</a>
+              </li>
+              <li>
+                <i class='icon-linkedin'></i>
+                <a href='http://www.linkedin.com/in/szuhanchang'>linkedin.com/in/szuhanchang</a>
+              </li>
+              <li>
+                <i class='icon-twitter'></i>
+                <a href='http://www.twitter.com/hanchang'>@hanchang</a>
+              </li>
+              <li>
+                <i class='icon-github'></i>
+                <a href='http://www.github.com/hanchang'>github.com/hanchang</a>
+              </li>
+              <li>
+                <i class='icon-laptop'></i>
+                <a href='http://www.speakerdeck.com/hanchang'>speakerdeck.com/hanchang</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='span3'>
+          <br>
+        </div>
+        <div class='span9'>
+          <div class='content'>
+            <h3>
+  Jekyll with Rdiscount
+  <span><small class="pull-right meta">27 May 2013</small></span>
+</h3>
+
+<hr />
+
+<div id="post">
+<p>I was having issues with pasting URLs with ampersands directly into my Markdown files in Jekyll because Maruku, the default Markdown parser for Jekyll uses REXML.</p>
+
+<p>REXML doesn&#8217;t allow raw ampersands, they need to be escaped into <code>&amp;amp;</code> which is a huge pain if you&#8217;re just copying and pasting a URL.</p>
+
+<p>Rdiscount thankfully uses Nokogiri instead of REXML to generate HTML from Markdown and as a result doesn&#8217;t suffer from this problem.</p>
+
+<p>To get Jekyll set up with Rdiscount, just do the following:</p>
+
+<pre><code>$ gem install rdiscount
+
+# In _config.yml
+markdown: rdiscount</code></pre>
+
+<p>Reload the jekyll server and you&#8217;re good to go!</p>
+</div>
+
+            <footer class='footer'>
+              &copy;
+              2013
+              Szu Han Chang
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
