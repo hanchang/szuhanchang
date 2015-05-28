@@ -1,0 +1,25 @@
+.panel.panel-default
+  .panel-body
+    %h3
+      %img(src=logo)
+      = position
+      %small
+        %strong
+          %a(href=employer_url)= employer
+        %span.pull-right.hidden-sm.hidden-xs
+          %span.label.label-warning= location
+          %span.label.label-danger= dates
+        .hidden-lg.hidden-md
+          %p
+          .label.label-warning= location
+          .label.label-danger= dates
+
+    - bullets.each do |bullet|
+      %p= bullet
+
+    %ul.breadcrumb
+      %li
+        Tech Stack:
+      - technologies.each do |tech|
+        %li
+          %span.badge.badge-success= tech

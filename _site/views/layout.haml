@@ -1,0 +1,161 @@
+!!! 5
+%html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "en", :lang => "en"}
+  %head
+    <meta charset='utf-8'> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    %link{:rel => 'stylesheet', :href => '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css', :type => 'text/css'}
+    %link{:rel => 'stylesheet', :href => '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css', :type => 'text/css'}
+    %link{:rel => 'stylesheet', :href => '/css/style.css', :type => 'text/css'}
+    %link{:rel => 'stylesheet', :href => '/css/print.css', :type => 'text/css', :media => 'print'}
+    %link{:href => 'http://fonts.googleapis.com/css?family=Lato', :rel => 'stylesheet', :type => 'text/css'}
+    %link{:href => @canonical, :rel => 'canonical'}
+    :javascript
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-3354361-40']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    %title 
+      =@title
+
+  %body
+    .container
+      .row
+        .hidden-lg.hidden-md
+          .text-center 
+            %h3 Szu Han Chang
+
+            #avatar
+              %img.img-polaroid(src="/images/han.jpg")
+
+          %p
+
+          %ul.nav.nav-pills.nav-stacked
+            %li{:class => @resume}
+              %a(href='/') 
+                %i.fa.fa-tasks.fa-fw
+                Resume
+            %li{:class => @projects}
+              %a(href='/projects') 
+                %i.fa.fa-keyboard-o.fa-fw
+                Projects
+            %li{:class => @coursework}
+              %a(href='/coursework') 
+                %i.fa.fa-graduation-cap.fa-fw
+                Coursework
+          %p
+
+          %table.table
+            %tr
+              %td 
+                %i.fa.fa-home.fa-fw 
+              %td
+                Jacksonville, FL
+            %tr
+              %td
+                %i.fa.fa-phone.fa-fw
+              %td
+                +1 (904) 748-9119
+            %tr
+              %td
+                %i.fa.fa-globe.fa-fw 
+              %td
+                %a(href='http://www.szuhanchang.com') www.szuhanchang.com
+            %tr
+              %td
+                %i.fa.fa-envelope-square.fa-fw
+              %td
+                %a(href='mailto:szu.han.chang@gmail.com') szu.han.chang@gmail.com
+            %tr
+              %td
+                %i.fa.fa-linkedin-square.fa-fw
+              %td
+                %a(href='http://www.linkedin.com/in/szuhanchang') linkedin.com/in/szuhanchang
+            %tr
+              %td
+                %i.fa.fa-twitter-square.fa-fw
+              %td
+                %a(href='http://www.twitter.com/hanchang') @hanchang
+            %tr
+              %td
+                %i.fa.fa-github.fa-fw
+              %td
+                %a(href='http://www.github.com/hanchang') github.com/hanchang
+            %tr
+              %td
+                %i.fa.fa-laptop.fa-fw
+              %td
+                %a(href='http://www.speakerdeck.com/hanchang') speakerdeck.com/hanchang
+          
+        #card.affix.hidden-xs.hidden-sm
+                  
+          #bio
+            .text-center 
+              %h3 Szu Han Chang
+
+              #avatar
+                %img.img-polaroid(src="/images/han.jpg")
+
+            %hr
+
+          #menu
+            %ul.nav.nav-pills.nav-stacked
+              %li{:class => @resume}
+                %a(href='/') 
+                  %i.fa.fa-tasks.fa-fw
+                  Resume
+              %li{:class => @projects}
+                %a(href='/projects') 
+                  %i.fa.fa-keyboard-o.fa-fw
+                  Projects
+              %li{:class => @coursework}
+                %a(href='/coursework') 
+                  %i.fa.fa-graduation-cap.fa-fw
+                  Coursework
+            %hr
+
+          #contact
+            %ul.list-unstyled
+              %li 
+                %i.fa.fa-home.fa-fw 
+                San Francisco, CA
+              %li
+                %i.fa.fa-phone.fa-fw
+                +1 (904) 748-9119
+              %li
+                %i.fa.fa-globe.fa-fw 
+                %a(href='http://www.szuhanchang.com') www.szuhanchang.com
+              %li
+                %i.fa.fa-envelope-square.fa-fw
+                %a(href='mailto:szu.han.chang@gmail.com') szu.han.chang@gmail.com
+              %li
+                %i.fa.fa-linkedin-square.fa-fw
+                %a(href='http://www.linkedin.com/in/szuhanchang') linkedin.com/in/szuhanchang
+              %li
+                %i.fa.fa-twitter-square.fa-fw
+                %a(href='http://www.twitter.com/hanchang') @hanchang
+              %li
+                %i.fa.fa-github.fa-fw
+                %a(href='http://www.github.com/hanchang') github.com/hanchang
+              %li
+                %i.fa.fa-laptop.fa-fw
+                %a(href='http://www.speakerdeck.com/hanchang') speakerdeck.com/hanchang
+
+
+      .row
+        .col-lg-3.col-md-3
+          %br
+
+        .col-lg-9.col-md-9
+          .content
+            = yield
+            %footer.footer
+              &copy; 
+              = Time.now.year 
+              Szu Han Chang
+

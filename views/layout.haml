@@ -2,8 +2,9 @@
 %html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "en", :lang => "en"}
   %head
     <meta charset='utf-8'> 
-    %link{:rel => 'stylesheet', :href => '//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap.min.css', :type => 'text/css'}
-    %link{:rel => 'stylesheet', :href => '//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css', :type => 'text/css'}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    %link{:rel => 'stylesheet', :href => '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css', :type => 'text/css'}
+    %link{:rel => 'stylesheet', :href => '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css', :type => 'text/css'}
     %link{:rel => 'stylesheet', :href => '/css/style.css', :type => 'text/css'}
     %link{:rel => 'stylesheet', :href => '/css/print.css', :type => 'text/css', :media => 'print'}
     %link{:href => 'http://fonts.googleapis.com/css?family=Lato', :rel => 'stylesheet', :type => 'text/css'}
@@ -25,70 +26,132 @@
   %body
     .container
       .row
-        #card.well.affix.span3
-                  
-          #bio
-            %h3.pagination-centered Szu Han Chang
+        .hidden-lg.hidden-md
+          .text-center 
+            %h3 Szu Han Chang
 
             #avatar
               %img.img-polaroid(src="/images/han.jpg")
+
+          %p
+
+          %ul.nav.nav-pills.nav-stacked
+            %li{:class => @resume}
+              %a(href='/') 
+                %i.fa.fa-tasks.fa-fw
+                Resume
+            %li{:class => @projects}
+              %a(href='/projects') 
+                %i.fa.fa-keyboard-o.fa-fw
+                Projects
+            %li{:class => @coursework}
+              %a(href='/coursework') 
+                %i.fa.fa-graduation-cap.fa-fw
+                Coursework
+          %p
+
+          %table.table
+            %tr
+              %td 
+                %i.fa.fa-home.fa-fw 
+              %td
+                Jacksonville, FL
+            %tr
+              %td
+                %i.fa.fa-phone.fa-fw
+              %td
+                +1 (904) 748-9119
+            %tr
+              %td
+                %i.fa.fa-globe.fa-fw 
+              %td
+                %a(href='http://www.szuhanchang.com') www.szuhanchang.com
+            %tr
+              %td
+                %i.fa.fa-envelope-square.fa-fw
+              %td
+                %a(href='mailto:szu.han.chang@gmail.com') szu.han.chang@gmail.com
+            %tr
+              %td
+                %i.fa.fa-linkedin-square.fa-fw
+              %td
+                %a(href='http://www.linkedin.com/in/szuhanchang') linkedin.com/in/szuhanchang
+            %tr
+              %td
+                %i.fa.fa-twitter-square.fa-fw
+              %td
+                %a(href='http://www.twitter.com/hanchang') @hanchang
+            %tr
+              %td
+                %i.fa.fa-github.fa-fw
+              %td
+                %a(href='http://www.github.com/hanchang') github.com/hanchang
+            %tr
+              %td
+                %i.fa.fa-laptop.fa-fw
+              %td
+                %a(href='http://www.speakerdeck.com/hanchang') speakerdeck.com/hanchang
+          
+        #card.affix.hidden-xs.hidden-sm
+                  
+          #bio
+            .text-center 
+              %h3 Szu Han Chang
+
+              #avatar
+                %img.img-polaroid(src="/images/han.jpg")
 
             %hr
 
           #menu
             %ul.nav.nav-pills.nav-stacked
-              %li.nav-header Navigation Menu
               %li{:class => @resume}
                 %a(href='/') 
-                  %i.icon-tasks 
+                  %i.fa.fa-tasks.fa-fw
                   Resume
               %li{:class => @projects}
                 %a(href='/projects') 
-                  %i.icon-beaker 
+                  %i.fa.fa-keyboard-o.fa-fw
                   Projects
-              %li{:class => @blog}
-                %a(href='/blog')
-                  %i.icon-pencil
-                  Blog
               %li{:class => @coursework}
                 %a(href='/coursework') 
-                  %i.icon-book 
+                  %i.fa.fa-graduation-cap.fa-fw
                   Coursework
             %hr
 
           #contact
-            %ul.unstyled
+            %ul.list-unstyled
               %li 
-                %i.icon-home 
-                Shanghai, China
+                %i.fa.fa-home.fa-fw 
+                Jacksonville, FL
               %li
-                %i.icon-phone
+                %i.fa.fa-phone.fa-fw
                 +1 (904) 748-9119
               %li
-                %i.icon-globe 
+                %i.fa.fa-globe.fa-fw 
                 %a(href='http://www.szuhanchang.com') www.szuhanchang.com
               %li
-                %i.icon-inbox
+                %i.fa.fa-envelope-square.fa-fw
                 %a(href='mailto:szu.han.chang@gmail.com') szu.han.chang@gmail.com
               %li
-                %i.icon-linkedin
+                %i.fa.fa-linkedin-square.fa-fw
                 %a(href='http://www.linkedin.com/in/szuhanchang') linkedin.com/in/szuhanchang
               %li
-                %i.icon-twitter
+                %i.fa.fa-twitter-square.fa-fw
                 %a(href='http://www.twitter.com/hanchang') @hanchang
               %li
-                %i.icon-github
+                %i.fa.fa-github.fa-fw
                 %a(href='http://www.github.com/hanchang') github.com/hanchang
               %li
-                %i.icon-laptop
+                %i.fa.fa-laptop.fa-fw
                 %a(href='http://www.speakerdeck.com/hanchang') speakerdeck.com/hanchang
 
 
       .row
-        .span3
+        .col-lg-2.col-md-2
           %br
 
-        .span9
+        .col-lg-10.col-md-10
           .content
             = yield
             %footer.footer

@@ -1,0 +1,28 @@
+#goodreads
+  %h1.pagination-centered Goodreads Challenge
+
+  %hr
+
+  %h3 The Problem
+  %p
+    Original problem statement:
+    %a(href="http://www.goodreads.com/about/design_challenge") http://www.goodreads.com/about/design_challenge
+  %blockquote
+    You are an engineer at a purely hypothetical startup - let's call it Goodreads. Your hypothetical boss - let's call him 'Otis' - comes over and says: "I'd like you to build a new feature to show a given member other members with similar books to them." You agree, and now have to design said system.
+    %br
+    %br
+    %strong The Requirements
+    %ul
+      %li Ability to take as input any number of books from the users shelves
+      %li Show up to 100 members with similar books, and show what % of the input set they have in common with the member.
+      %li Extra credit: show which books they have in common as well as what %.
+      %li Scalable to hundreds of millions of users.
+      %li Scalable for users with up to 10,000 books.
+      %li All results must be returned in under a second.
+      %li For simplicity's sake assume the relevant data is stored in 3 database tables: users, books, and reviews (a user_id to book_id mapping).
+
+    %strong The Deliverables
+    %br
+      We're not asking you to build this, but rather to explain how you would design it. What database tables would be involved? Application servers? Caching? There is no right answer per se - we just want to see how you think. Response should be plain text and not include any actual code. Please keep your response to a couple paragraphs and don't spend a lot of time.
+
+  %h3 My Solution
