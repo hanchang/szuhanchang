@@ -9,6 +9,7 @@ First run the site locally via `bundle exec ruby app.rb`.
 
 Then run `sh deploy.sh` which uses wget and spiders the site into static HTML.
 
-Finally, rsync the site directory to the host.
+Finally, rsync the site directory to the host:
+`rsync -r site/ pillarofeden@pillarofeden.com:webapps/szuhanchang`
 
 Note: The `coursework/` data is all on the host.
