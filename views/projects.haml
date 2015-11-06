@@ -7,6 +7,51 @@
   %a{:name => "web"}
   %h3.text-center Web Applications
 
+  %a(name="authoritymetrics")
+  .project_container
+    .row
+      .col-md-12
+        %h4 AuthorityMetrics
+    .row
+      .col-md-4
+        %a(href="https://www.authoritymetrics.com") authoritymetrics.com
+        %br
+        %img(src="/images/authoritymetrics.png" class="screenshot")
+        %ul
+          %li Meteor 1.2.1
+          %li MongoDB
+          %li Git
+          %li IronWorker
+          %li Stripe
+          %li SEMRush API
+        %a.btn(href="https://www.authoritymetrics.com") Visit Site
+      .col-md-8
+        %p
+          %em
+            %strong Background
+          %br
+        %p
+          AuthorityMetrics is a SaaS keyword research tool that not only helps you to brainstorm keywords and retrieve their search volume, cost per click, and Adwords saturation, it also performs detailed competition analysis on every single keyword result instantaneously. This helps save massive amounts of time and effort usually spent on analyzing the feasibility of ranking for specific terms, so that you only target the keywords that you know you can successfully compete for.
+        %p
+          In addition, AuthorityMetrics goes beyond Google Adwords Keyword Tool's suggestions and allows you to come up with lesser known and more profitable keywords by entering specific web pages to give recommendations for keywords that match the content on that page. This allows you to spy on your competition and find their keywords so you can increase your traffic.
+        %p
+          %em
+            %strong Technology
+          %br
+        %p
+          Meteor was chosen as the framework for AuthorityMetrics because of the realtime nature of the application. It allows us to update the UI on the fly as soon as background workers finish analyzing keywords, so that users get access to data immediately.
+        %p
+          Massively distributed workers are used to parallelize the computationally intensive competition analysis of the search engine result listings for each keyword retrieved and avoid rate limiting.
+        %p
+          Keyword results are cached for performance optimization and to conserve computational resources.
+        %p
+          Basic natural language processing is implemented by the competition analysis workers to determine relevance and also compute various metrics shown to users.
+        %p
+          Payment processing is handled through Stripe with multiple plan tiers supported. SSL is set up to secure credit card information.
+        %p
+          We integrate tightly with the SEMRush API to obtain keyword data.
+
+
   %a(name="ranktracker")
   .project_container
     .row
@@ -14,7 +59,7 @@
         %h4 Ranktracker.io
     .row
       .col-md-4
-        %a(href="http://www.ranktracker.io") ranktracker.io
+        %a(href="https://ranktracker-io.herokuapp.com") ranktracker.io
         %br
         %img(src="/images/ranktracker.png" class="screenshot")
         %ul
@@ -31,6 +76,7 @@
         %ul
           %li ApiAxle
           %li CanCan
+        %a.btn(href="https://ranktracker-io.herokuapp.com") Visit Site
       .col-md-8
         %p
           %em
@@ -57,7 +103,7 @@
   .project_container
     .row
       .col-md-12
-        %h4 
+        %h4
           DomainJawa
           %small
     .row
@@ -78,7 +124,7 @@
 
       .col-md-8
         %p
-          %em 
+          %em
             %strong Background
           %br
           DomainJawa was created from scratch in 48 hours as a fun challenge.
@@ -87,7 +133,7 @@
         %p
           Stripe is used for payment processing.
         %p
-          %em 
+          %em
             %strong Technology
           %br
         %p
@@ -104,7 +150,7 @@
       .col-md-4
         %a(href="https://www.oneryng.com") oneryng.com
         %br
-        %a(href="https://www.oneryng.com") 
+        %a(href="https://www.oneryng.com")
           %img(src="/images/oneryng.png" class="screenshot")
         %ul
           %li Ruby on Rails 3.2.12
@@ -122,23 +168,23 @@
 
       .col-md-8
         %p
-          %em 
+          %em
             %strong Background
           %br
           OneRyng is a VPN service that allows users to surf the web quickly and privately. It takes advantage of particular architectural decisions that make it more difficult to block in countries with internet censorship.
         %p
           OneRyng currently provides both PPTP and L2TP/IPSec protocols for users with support for OpenVPN coming soon. It is integrated with Stripe for payment processing.
         %p
-          %em 
+          %em
             %strong Technology
           %br
           OneRyng's dashboard runs on Heroku via Unicorn to improve concurrency and uses an nginx reverse proxy to handle the SSL endpoint issue as well as serve static content.
         %p
-          Stripe callbacks are used to determine when to perform particular events such as sending out welcome emails, setting up new username/password combinations, provisioning new VPN servers, etc. 
+          Stripe callbacks are used to determine when to perform particular events such as sending out welcome emails, setting up new username/password combinations, provisioning new VPN servers, etc.
         %p
           Currently shell scripts are used to automate new user creation as well as VPN server provisioning but will migrate to Chef or Puppet in the future for server provisioning.
         %p
-          VPN servers are monitored using 
+          VPN servers are monitored using
           %a(href="https://github.com/sensu/sensu") Sensu
           since it allows dynamic discovery of new nodes. Nagios requires that a static environment to perform monitoring, which is not feasible for my production setup because a new VPN server may be provisioned automatically at any time.
 
@@ -160,22 +206,22 @@
           %li Redis
           %li Memcached
           %li ActiveAdmin
-          %li 
+          %li
             %a(href="http://sidekiq.org") Sidekiq
-          %li 
+          %li
             %a(href="http://scrapy.org") Scrapy
-          %li 
+          %li
             %a(href="https://github.com/javan/whenever") Whenever
           %li Git
           %li Whois
       .col-md-8
-        %p 
-          %em 
+        %p
+          %em
             %strong Background
           %br
             The Domain Crawler is the commercialization of the Koba project (see below). It crawls the web and determines if outbound links from seed urls contain domains that are able to be registered directly from a registrar without having to go through aftermarket auctions or sales. These domains are valuable because they already have inbound links and therefore when set up again, most of them have some PageRank and a better chance to rank.
-        %p 
-          %em 
+        %p
+          %em
             %strong Technology
           %br
             Refactoring the original Koba code was necessary to bring this product to market; Anemone as a crawler wasn't stable enough to use in production, so I switched to Scrapy which boasted significant speedup and stability over its Ruby counterpart. After Scrapy retrieves all outbound URLs from seed domains, those domains are stored in Redis. Sidekiq workers are then used to retrieve the domains from Redis and queue domain availability checking. Duplicate jobs are filtered to prevent redundant work and there is a nice control panel to monitor status. Since worker tasks can be run in parallel, the system is extremely fast and scalable.
@@ -198,21 +244,21 @@
           %li PostgreSQL 9.1
           %li Redis
           %li WebSockets
-          %li 
+          %li
             %a(href="http://anemone.rubyforge.org") Anemone
-          %li 
+          %li
             %a(href="http://webd.is") Webdis
           %li Git (with submodules)
           %li SEOMoz API
           %li Whois
       .col-md-8
-        %p 
-          %em 
+        %p
+          %em
             %strong Background
           %br
           Koba is the codename for an internal tool I developed in Ruby and Python for crawling the web in order to find valuable domains that have already expired. It connects with a variety of APIs, including SEOMoz, AHrefs.com, and various WHOIS services to obtain the data required for automating calculation of estimated domain value.
         %p
-          %em 
+          %em
             %strong Technology
           %br
           The system is designed as a state machine, and each candidate domain moves between various states: when they are identified by the web crawler, data is being pulled, value is being calculated, spam is being filtered, etc.
@@ -229,7 +275,7 @@
   .project_container
     .row
       .col-md-12
-        %h4 
+        %h4
           HelloHero
           %small cofounder
     .row
@@ -251,7 +297,7 @@
 
       .col-md-8
         %p
-          %em 
+          %em
             %strong Background
           %br
           HelloHero was created from scratch in 72 hours during the <a href="http://www.launchhackathon.com">2013 Launch Hackathon</a> in San Francisco.
@@ -260,10 +306,10 @@
         %p
           The team consisted of 3.5 members since one person dropped out during the hackathon. We also wrote, practiced, and delivered a 2 minute pitch to a panel of VC / angel judges.
         %p
-          %em 
+          %em
             %strong Technology
           %br
-          We take advantage of the Twitter API to grab verified users as the seed data set. 
+          We take advantage of the Twitter API to grab verified users as the seed data set.
           <a href="http://twitter.github.com/typeahead.js">Twitter's typeahead.js</a> library handles the search bar autocompletion.
         %p
           Heroku hosts the site and an Apache transparent reverse proxy allows for a free custom domain.
@@ -272,7 +318,7 @@
   .project_container
     .row
       .col-md-12
-        %h4 
+        %h4
           BitXF
           %small cofounder
     .row
@@ -285,7 +331,7 @@
         %a.btn(href="https://www.bitxf.com") Visit Site
       .col-md-8
         %p
-          %em 
+          %em
             %strong Background
           %br
           BitXF is a Bitcoin marketplace created to serve the Chinese demographic. It accepts deposits and withdrawals from Taobao and Alipay, the eBay and Paypal of China.
@@ -320,7 +366,7 @@
           %li WordPress XMLRPC API
       .col-md-8
         %p
-          %em 
+          %em
             %strong Background
           %br
           I created a private blog network to administer a collection of WordPress blogs for a select group of trusted members.
@@ -351,16 +397,16 @@
         %a.btn(href="http://www.plethura.com") Visit Site
       .col-md-8
         %p
-          %em 
+          %em
             %strong Background
           %br
-          Plethura is a collection of technological tools for making writers' lives easier. Its first product is an ebook format converter which takes a manuscript and generates all the popular ebook file formats used in portable reading devices today including the Kindle, iPhone, iPad, and Android. 
+          Plethura is a collection of technological tools for making writers' lives easier. Its first product is an ebook format converter which takes a manuscript and generates all the popular ebook file formats used in portable reading devices today including the Kindle, iPhone, iPad, and Android.
         %p
           Planned future functionality includes a novel (pun intended) method for distributing ebooks that allows readers to try before buying while INCREASING conversion rates.
         %p
           To be honest, I also just wanted to try Django.
         %p
-          %em 
+          %em
             %strong Technology
           %br
           Plethura is built using the
@@ -390,16 +436,16 @@
         %a.btn(href="http://modelmaker.pillarofeden.com") Visit Site
       .col-md-8
         %p
-          %em 
+          %em
             %strong Background
           %br
-          ModelMaker is a joint venture between myself and Zai, a former model turned model recruiter who was introduced to me by my cousin. She wanted a web application to allow aspiring Chinese models to apply directly for her model recruiting agency, since she had a lot of gigs but not enough supply to meet the demand. 
+          ModelMaker is a joint venture between myself and Zai, a former model turned model recruiter who was introduced to me by my cousin. She wanted a web application to allow aspiring Chinese models to apply directly for her model recruiting agency, since she had a lot of gigs but not enough supply to meet the demand.
         %p
           Unfortunately my business partner has been going through a difficult time with some personal issues, including domestic violence and alcoholism so development has been postponed indefinitely while she deals with these issues. As a result the site is unfinished as you can see, and still only running on a staging server. The project has been abandoned and is now open sourced on GitHub:
           %br
           %a(href="http://github.com/hanchang/ModelMaker") http://github.com/hanchang/ModelMaker
         %p
-          %em 
+          %em
             %strong Technology
           %br
           %a(href="http://www.CodeIgniter.com") CodeIgniter
@@ -409,7 +455,7 @@
   .project_container
     .row
       .col-md-12
-        %h4 
+        %h4
           Fuel For Hire
           %small cofounder
     .row
@@ -426,19 +472,19 @@
         %a.btn{:href => "http://www.fuelforhire.com"} Visit Site
       .col-md-8
         %p
-          %em 
+          %em
             %strong Background
           %br
           Fuel For Hire was created when two of my college buddies were looking for jobs during senior year. I was still a junior at that time but kept hearing them talk about how difficult it was to tell which companies were good to work for. We decided to make a website where people could share their interview and employment experiences so that applicants could get a better idea of who they would be working for.
         %p
-          %em 
+          %em
             %strong Technology
           %br
           The site was made in
           %a(href="http://www.codeigniter.com") CodeIgniter
           , a rapid development PHP MVC framework. All the HTML/CSS was done by hand; no templating system was used. MySQL was the database used via CodeIgniter's ActiveRecord class. We had a Subversion repository from the start to help with collaboration.
         %p
-          %em 
+          %em
             %strong Methodology
           %br
           We were a very democratic group; all decisions made had to be unanimous, but unfortunately we found out that this meant that decisions took a long time to come to a conclusion. After they graduated, my cofounders and I continued work on the site remotely with weekly status meetings. Approximately half of the site was created in this fashion. We decided to call it quits about a year later after it was clear that our venture capital backed competitor
@@ -449,7 +495,7 @@
   .project_container
     .row
       .col-md-12
-        %h4 
+        %h4
           Sudoku for Rainforests &amp; Play for Clean Water
     .row
       .col-md-4
@@ -459,25 +505,25 @@
         %br
         %img(src="/images/sudokuforrainforests.png" class="screenshot")
         %br
-        /%img(src="/images/playforcleanwater.png") 
+        /%img(src="/images/playforcleanwater.png")
         %ul
           %li PHP
           %li MySQL
           %li Philanthropy
       .col-md-8
         %p
-          %em 
+          %em
             %strong Background
           %br
-          Both of these sites were created back in college when I was deeply inspired by <a href="http://www.freerice.com">freerice.com</a>. I thought it was so cool that they combined learning with philanthropy and wanted to do something similar. At the time, sudoku was the hot new thing and so I decided to combine the two together. 
+          Both of these sites were created back in college when I was deeply inspired by <a href="http://www.freerice.com">freerice.com</a>. I thought it was so cool that they combined learning with philanthropy and wanted to do something similar. At the time, sudoku was the hot new thing and so I decided to combine the two together.
           %br
-          At first I had difficulty selecting charitable causes but after some research on <a href="http://www.charitynavigator.org">Charity Navigator</a> I decided to pick the <a href="http://rainforestalliance.org/">Rainforest Alliance</a> and <a href="http://www.charitywater.org/">Charity: Water</a>. 
+          At first I had difficulty selecting charitable causes but after some research on <a href="http://www.charitynavigator.org">Charity Navigator</a> I decided to pick the <a href="http://rainforestalliance.org/">Rainforest Alliance</a> and <a href="http://www.charitywater.org/">Charity: Water</a>.
 
   %a{:name => "tokogae"}
   .project_container
     .row
       .col-md-12
-        %h4 
+        %h4
           Tokogae
     .row
       .col-md-4
@@ -492,7 +538,7 @@
           %li Philanthropy
       .col-md-8
         %p
-          %em 
+          %em
             %strong Background
           %br
           Tokogae stands for the "Tree of Knowledge of Good and Evil" and is a search engine that donates its proceeds to a charity of the user's choice. It basically just leverages the Google private search and I also created this back in college.
@@ -500,7 +546,7 @@
           It uses an Ajax interface to allow the user to select the charity they want proceeds to go towards and stores their selection in a cookie.
   %hr
 
-  / Open Source 
+  / Open Source
   %a{:name => "open"}
   %h3.text-center Open Source Contributions
 
@@ -510,14 +556,14 @@
         %h4 Ruby Ecosystem
     .row
       .col-md-12
-        %h5 
+        %h5
           %a(href="https://github.com/redis-store/redis-store") redis-store
         The redis-store gem (one of the cache implementations for ActiveSupport) was lacking the ability to set an TTL expiration for values entered. I implemented it along with tests and my pull request was merged into the project:
         %a(href="https://github.com/redis-store/redis-store/pull/184")
           redis-store PR 184
     .row
       .col-md-12
-        %h5 
+        %h5
           %a(href="https://github.com/andrewculver/koudoku") koudoku
         The koudoku gem, a Rails engine for easily integrating Stripe subscriptions, was lacking the functionality to disable prorated refunds, so I implemented it and submitted a pull request:
         %a(href="https://github.com/andrewculver/koudoku/pull/74")
@@ -527,7 +573,7 @@
   .project_container
     .row
       .col-md-12
-        %h4 
+        %h4
           Friar Framework
     .row
       .col-md-4
@@ -542,7 +588,7 @@
           over to Android and called it Friar Framework (it's a pun, get it?).
         %p
           %a.btn{:href => "http://www.friarframework.com"} Friar Framework Website
- 
+
   %a{:name => "mozilla"}
   .project_container
     .row
@@ -553,30 +599,30 @@
       .col-md-4
         %img(src="/images/mozilla_logo.png")
       .col-md-8
-        %p 
-          I am a Mozilla contributor who believes in open source and enjoys donating my occasional spare time to fix bugs in Firefox. I'm also super interested in FirefoxOS. 
+        %p
+          I am a Mozilla contributor who believes in open source and enjoys donating my occasional spare time to fix bugs in Firefox. I'm also super interested in FirefoxOS.
         %p
           To see a list of all the bugs I've contributed to so far, check out:
           %a{:href => "http://www.szuhanchang.com/mozilla"} http://www.szuhanchang.com/mozilla
         %p Find me on Mozilla's #introduction IRC channel, I'm frequently there!
- 
+
   %a{:name => "horde"}
   .project_container
     .row
       .col-md-12
-        %h4 
+        %h4
           Horde Framework
     .row
       .col-md-4
         %img(src="/images/horde3.png")
       .col-md-8
-        %p 
-          During the summer between my freshman and sophomore years of college, I applied and was accepted into the first ever <a href="http://developers.google.com/open-source/soc">Google Summer of Code</a> program to work on the Sedule Project, a module in the <a href="http://www.horde.org">Horde Framework</a> to help managers schedule employee shifts based on their availability. 
+        %p
+          During the summer between my freshman and sophomore years of college, I applied and was accepted into the first ever <a href="http://developers.google.com/open-source/soc">Google Summer of Code</a> program to work on the Sedule Project, a module in the <a href="http://www.horde.org">Horde Framework</a> to help managers schedule employee shifts based on their availability.
         %p
           Horde is a very popular open source framework best known for providing a modular, customizable webmail interface.
         %p
           My successful completion of the project earned me a $7500 grant from Google and a $2500 grant to Horde.
-        %p 
+        %p
           %a(href="http://wiki.horde.org/Project/Sedule") wiki.horde.org/project/sedule
 
   %hr
@@ -598,13 +644,13 @@
         %a.btn{:href => "http://www.localizedacademy.com"} Visit Site
       .col-md-8
         %p
-          %em 
+          %em
             %strong Background
           %br
           I have experience in local business marketing and packaged it up as an online video course.
           The recording process was difficult at first but a great learning experience to get comfortable in front of a camera and also develop some video editing skills.
         %p
-          %em 
+          %em
             %strong Technology
           %br
           Instead of building something from scratch, I leveraged an existing SaaS solution that was quite effective for getting to market quickly and also provided excellent design and administrative functionality for hosting online courses.
@@ -627,12 +673,12 @@
         %a.btn{:href => "http://www.worldlytravelersguide.com"} Visit Site
       .col-md-8
         %p
-          %em 
+          %em
             %strong Background
           %br
           My girlfriend and I are avid travelers; she's compiled a website with detailed itinerary information about our travel destinations for other people to help plan their vacations. There is an English version as well as a Chinese version.
         %p
-          %em 
+          %em
             %strong Technology
           %br
             Since the WordPress shared host server is in Texas, I use nginx on a VPS located in California as a transparent reverse proxy to serve the Chinese site in order to help reduce latency and page load time. This has resulted in dramatic loading time improvements, from a pathetic 28s load time to just under 10s through a Chinese internet connection for a 180% speedup.
@@ -659,14 +705,14 @@
         %a.btn{:href => "http://www.snowboardsforwomen.com"} Visit Site
       .col-md-8
         %p
-          %em 
+          %em
             %strong Background
           %br
           Snowboards for Women was created because I love snowboarding and wanted my to help my then girlfriend choose a snowboard so she could come with me on trips. It was difficult to find a women's snowboard so I used
           %a{:href => "http://www.crummy.com/software/BeautifulSoup/"} Beautiful Soup,
           a Python HTML parser, to scrape the outdoor retailer websites for women's boards. I later found out that each merchant had datafeeds with affiliate links so I switched to that, created a website, and after learning and implementing SEO the site makes me a healthy amount of passive income every winter.
         %p
-          %em 
+          %em
             %strong Technology
           %br
           Originally the site was just a list of women's snowboards and their links scraped using Beautiful Soup and some regular expressions for personal use. I've since grown it to be a CodeIgniter web application with bash scripts that fetch datafeeds and parse them automatically to keep prices current via cron jobs.
@@ -681,7 +727,7 @@
   .project_container
     .row
       .col-md-12
-        %h4 Trekking Poles Pro 
+        %h4 Trekking Poles Pro
     .row
       .col-md-4
         %a{:href => "http://www.trekkingpolespro.com"} trekkingpolespro.com
@@ -701,12 +747,12 @@
         %a.btn{:href => "http://www.trekkingpolespro.com"} Visit Site
       .col-md-8
         %p
-          %em 
+          %em
             %strong Background
           %br
           Since the Snowboards for Women business model was so successful, I wanted to duplicate it in other markets as well. As a result, I completely rewrote the framework to build Trekking Poles Guide, which does not have the seasonal problem that Snowboards For Women suffers from. This framework is modular enough to be used for virtually any price comparison / review aggregation site, and I plan on using this framework to build a new outdoor gear review site every month.
         %p
-          %em 
+          %em
             %strong Technology
           %br
           Everything has been refactored to be clean and reusable, with necessary abstractions to make it easy to generate a new product site using the framework without excessive premature optimization. The code is stored in a private Mercurial repository on
@@ -732,13 +778,13 @@
         %a.btn{:href => "http://www.programminginterview.com"} Visit Site
       .col-md-8
         %p
-          %em 
+          %em
             %strong Background
           %br
           The Ultimate Guide to Programming Interviews was created when I began my job hunt after college. In preparation for the technical interviews commonly given for software developer positions, I collected many of the practice questions that I came across while reviewing. I also included my own coded answers and detailed written explanations for the solutions. Friends asked for the document which I originally kept in a Word file, but it got old emailing them updated versions so I decided to just put all the content on a website.
         %p According to Google Analytics, the Ultimate Guide to Programming Interviews consistently gets over 6000+ unique visitors per month. Every single visitor is acquired organically - I do no advertising of any sort, including word of mouth. The site is ranked #1 or #2 for the keywords "programming interview" and "programming interviews" and has a Google PageRank of 5.
         %p
-          %em 
+          %em
             %strong Technology
           %br
           The site was developed using
@@ -764,19 +810,19 @@
         %a.btn{:href => "http://www.szuhanchang.com"} Visit Site
       .col-md-8
         %p
-          %em 
+          %em
             %strong Background
           %br
             This is the site you're looking at right now! I needed a nice professional portfolio to show off my cool projects and work experience, so here we are.
             (Yes, my favicon is a unicorn.)
         %p
-          %em 
+          %em
             %strong Technology
           %br
-            The site was created using Sinatra and Haml and deployed on Heroku. However, I had some issues with the fact that the single Heroku dyno would idle and 
-            take a long time to boot when someone requested the site for the first time. 
+            The site was created using Sinatra and Haml and deployed on Heroku. However, I had some issues with the fact that the single Heroku dyno would idle and
+            take a long time to boot when someone requested the site for the first time.
         %p
-          As a result, I experimented with using nginx as a transparent reverse proxy 
+          As a result, I experimented with using nginx as a transparent reverse proxy
           to cache the site contents and serve them directly as static pages from nginx. This worked well until I realized I had a ton of coursework that was only
           hosted on my shared host and my VPS didn't have enough disk space to handle it so I wrote a script to wget mirror the Heroku site onto my shared host as
           a deployment script. Now the site sits on nginx on my shared host served directly as HTML files.
@@ -788,7 +834,7 @@
   %a{:name => "trading"}
   %h3.text-center Algorithmic Trading
 
-  %h4 
+  %h4
     Algorithmic Trading Backtesting Framework and Strategy Development
     %small cofounder
   %img.img-polaroid.pull-right(src="/images/bloomberg-terminal.jpg" class="screenshot")
@@ -804,13 +850,13 @@
     %li RedMine bug tracking
     %li Distributed Team
   %p
-    %em 
+    %em
       %strong Background
     %br
     Since I used to work at Lime Brokerage, a high volume, high throughput brokerage whose clients were all professional black box algorithmic traders, I really got into automated trading myself. Unfortunately, company policy prevented employees from doing any automated trading but I used my time there to learn a lot about the financial markets.
   %p After leaving Lime, I found some likeminded people including previous coworkers who had also left the company and we started a project to develop and backtest trading strategies. Originally we were going to use off-the-shelf software like Amibroker or WealthLab but quickly determined that these solutions were insufficient to do any serious, minimal latency, high volume day trading, so we decided to write our own backtesting framework.
   %p
-    %em  
+    %em
       %strong Technology
     %br
     The backtesting trading framework is written in Java.
@@ -825,7 +871,7 @@
     %a{:href => "http://www.interactivebrokers.com"} Interactive Brokers
     through their Trader Workstation (TWS) Java API using custom wrapper classes. Bug tracking is done via RedMine.
   %p
-    %em 
+    %em
       %strong Methodology
     %br
     Our team of six is geographically distributed throughout Boston, San Francisco, and Shanghai. We collaborate mostly through email because it is asynchronous but hold Skype conferences to brainstorm and make important group decisions. Otherwise, work is done remotely on our own time schedules, since different people may have different busy periods. Every team member has various specialties (mine are system administration, strategy development, and Interactive Brokers API integration) but anyone can work on any part of the system.

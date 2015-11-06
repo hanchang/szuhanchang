@@ -6,49 +6,68 @@
   %p.lead
     Hi, I'm Han, an entrepreneurial software engineer who is passionate about helping startups and small businesses rapidly ship features with real business value that delights their clients by deeply understanding customer needs and implementing solutions through quality code and architecture.
 
-  = haml(:job, layout: false, locals: { logo: '/images/authoritymetrics.png', 
-      position: 'Cofounder', 
-      employer: 'AuthorityMetrics', 
-      employer_url: 'https://www.authoritymetrics.com', 
-      location: 'Remote', 
-      dates: 'December 2014 - Current', 
-      bullets: [ 'Architected, developed, and marketed a Meteor application for search engine keyword and competition analysis.', 
-        'Led a remote, distributed developer team of 2.', 
-        'Wrote and deployed a series of distributed web crawlers to scrape and retrieve data for analysis in a massively parallel fashion that run on both IronWorker and Lambda.', 
-        'Optimized Mongo oplog and Meteor performance via tools like Kadira to handle 1000s of updates per second, including working with multiple open source Meteor package creators such as the authors of collection2, simple schema, and reactive-table.', 
-        'Integrated with various APIs, including multiple keyword data sources, email and marketing automation software, customer support software, marketing analytics, affiliate program management software, and Stripe for payment processing.', 
-        'Set up continuous integration for both staging and production branches.', 
-        'Thoroughly documented internal processes to create standard operating procedures for local development setup, code review and merge, deployment to each environment, customer refund / upgrade / downgrade / reactivation procedures, and canned responses for support questions.', 
-      ], 
+  = haml(:job, layout: false, locals: { logo: '/images/gothamdreamcars.ico',
+      position: 'Contract Fullstack Rails Engineer',
+      employer: 'Gotham Dream Cars',
+      employer_url: 'https://www.gothamdreamcars.com',
+      location: 'Remote',
+      dates: 'June 2015 - Current',
+      bullets: [ 'Upgrading application from Rails 3 and MongoDB to Rails 4 and Postgres for performance and to stay current with the Rails ecosystem.',
+        'Replaced Authorize.net with Stripe as the payment processor, including implementing substantial backend ActiveAdmin functionality to allow operations team members to add cards, create additional charges, and refund arbitrary amounts for existing charges for customers.',
+        'Overhauled entire site to use a mobile responsive design via the <a href="http://getskeleton.com">Skeleton Framework</a>, improving conversion rates by 30% on mobile.',
+        'Implemented search by date functionality for car reservations.',
+        'Performance optimized ActiveAdmin index listings by denormalizing Mongo schema for various collections.',
+        'Created and integrated client API library for Bluebird, a third party car rental reservation software system, to sync two distinct reservation databases after Gotham Dream Cars merged with <a href="http://bhrentacar.com">Beverly Hills Rent a Car</a>.',
+        'Integrated Segment.io analytics for detailed tracking of marketing spend and user progress through each conversion funnel.',
+        'Expanded existing RSpec test suite, including integration tests using Capybara via the headless Poltergeist driver for PhantomJS.',
+        'Configured continuous integration to run static analysis and test suites on every commit for improved code quality.',
+        'Set up staging environment that has full parity with production.',
+        'Converted from stylesheets from Stylus to SCSS to eliminate dependency on Node and improve Heroku deployment performance.' ],
+      technologies: ['Rails 3.2 & 4.2', 'Heroku', 'MongoDB', 'Postgres', 'Stripe'] })
+
+  = haml(:job, layout: false, locals: { logo: '/images/authoritymetrics.ico',
+      position: 'Cofounder',
+      employer: 'AuthorityMetrics',
+      employer_url: 'https://www.authoritymetrics.com',
+      location: 'Remote',
+      dates: 'December 2014 - Current',
+      bullets: [ 'Architected, developed, and marketed a Meteor application for search engine keyword and competition analysis.',
+        'Led a remote, distributed developer team of 2.',
+        'Wrote and deployed a series of distributed web crawlers to scrape and retrieve data for analysis in a massively parallel fashion that run on both IronWorker and Lambda.',
+        'Optimized Mongo oplog and Meteor performance via tools like Kadira to handle 1000s of updates per second, including working with multiple open source Meteor package creators such as the authors of collection2, simple schema, and reactive-table.',
+        'Integrated with various APIs, including multiple keyword data sources, email and marketing automation software, customer support software, marketing analytics, affiliate program management software, and Stripe for payment processing.',
+        'Set up continuous integration for both staging and production branches.',
+        'Thoroughly documented internal processes to create standard operating procedures for local development setup, code review and merge, deployment to each environment, customer refund / upgrade / downgrade / reactivation procedures, and canned responses for support questions.',
+      ],
       technologies: ['Meteor', 'Modulus + Compose', 'MongoDB', 'IronWorker + Amazon Lambda', 'Node.js + DDP', 'Stripe'] })
 
-  = haml(:job, layout: false, locals: { logo: '/images/okcupidlabs.png', 
-      position: 'Fullstack Rails Engineer', 
-      employer: 'OkCupid Labs', 
-      employer_url: 'http://www.okcupidlabs.com', 
-      location: 'San Francisco', 
-      dates: 'Apr 2013 - May 2014', 
-      bullets: [ 'Created a Sinatra analytics app with <a href="http://d3js.org">D3 visualizations</a> backed by MongoDB. The Rails application sends analytics data via RabbitMQ and the Sinatra app receives, processes, and inserts them into Mongo. The Sinatra app facilitates querying into large volumes of data quickly for insights into site performance and user behavior. The project was completed within first two weeks of start date.', 
-        'Deployed the Sinatra analytics app to AWS EC2 via custom written Chef recipe.', 
-        'Implemented a new profile onboarding experience for Kiss.com, which has 10+ million users.', 
-        'Heavily refactored the Kiss.com User model to DRY up repetitive code using metaprogramming.', 
-        'Proposed migrating Resque workers (processes) to Sidekiq workers (threads) to reduce memory consumption, which would drastically reduce monthly AWS costs.', 
-        'Designed and implemented the entire new user onboarding process for Delightful.com, including integration of Facebook and Twitter Single Sign On.', 
-        'Developed the versioned Rails API for the Delightful iOS application.', 
-        'Kiss.com was a dating site owned by IAC and shut down in August 2013 and merged into Match.com. <br> Delightful.com was a couples concierge service similar to <a href="http://www.youandmeconcierge.com">youandmeconcierge.com</a> that was shut down by IAC in May 2014.', 
-      ], 
+  = haml(:job, layout: false, locals: { logo: '/images/okcupidlabs.png',
+      position: 'Fullstack Rails Engineer',
+      employer: 'OkCupid Labs',
+      employer_url: 'http://www.okcupidlabs.com',
+      location: 'San Francisco',
+      dates: 'Apr 2013 - May 2014',
+      bullets: [ 'Created a Sinatra analytics app with <a href="http://d3js.org">D3 visualizations</a> backed by MongoDB. The Rails application sends analytics data via RabbitMQ and the Sinatra app receives, processes, and inserts them into Mongo. The Sinatra app facilitates querying into large volumes of data quickly for insights into site performance and user behavior. The project was completed within first two weeks of start date.',
+        'Deployed the Sinatra analytics app to AWS EC2 via custom written Chef recipe.',
+        'Implemented a new profile onboarding experience for Kiss.com, which has 10+ million users.',
+        'Heavily refactored the Kiss.com User model to DRY up repetitive code using metaprogramming.',
+        'Proposed migrating Resque workers (processes) to Sidekiq workers (threads) to reduce memory consumption, which would drastically reduce monthly AWS costs.',
+        'Designed and implemented the entire new user onboarding process for Delightful.com, including integration of Facebook and Twitter Single Sign On.',
+        'Developed the versioned Rails API for the Delightful iOS application.',
+        'Kiss.com was a dating site owned by IAC and shut down in August 2013 and merged into Match.com. <br> Delightful.com was a couples concierge service similar to <a href="http://www.youandmeconcierge.com">youandmeconcierge.com</a> that was shut down by IAC in May 2014.',
+      ],
       technologies: ['Rails 3.2', 'AWS', 'Chef', 'MySQL', 'Resque', 'RabbitMQ'] })
 
-  = haml(:job, layout: false, locals: { logo: '/images/nohatmedia.ico', 
-      position: 'CoFounder', 
-      employer: 'NoHatDigital', 
-      employer_url: 'http://www.nohatdigital.com', 
-      location: 'San Francisco', 
-      dates: 'July 2014 - Current', 
+  = haml(:job, layout: false, locals: { logo: '/images/nohatmedia.ico',
+      position: 'CoFounder',
+      employer: 'NoHatDigital',
+      employer_url: 'http://www.nohatdigital.com',
+      location: 'Remote',
+      dates: 'July 2014 - May 2015',
       bullets: [ 'Conceived and designed the curriculum and courseware to teach people fundamentals of online marketing, including concepts such as CRO (conversion rate optimization), CAC (customer acquisition cost), LTV (lifetime value of customer), and churn (customer retention rate) along with how to measure and track those metrics.',
         'Hired and managed a team of 2 freelance developers to work on internal software projects: <ul> <li><a href="http://www.nohatdigital.com/courses/">NoHatHQ</a> - lead capture, onboarding, and student management for online marketing training courses</li> <li><a href="http://oracle.galactica.biz">Parched Oracle</a> - keyword research tool with built-in competition analysis</li> <li><a href="http://www.indexpatrol.com">IndexPatrol</a> - bulk site index checker</li> <li><a href="http://spamchecker.nohatdigital.com">SpamChecker</a> - bulk expired domain backlink profile analysis</li> <li><a href="http://links4life.nohatdigital.com">Links4Life</a> - crowdsourced content network for building backlinks to improve SEO</li> </ul>',
-      ], 
-      technologies: ['Rails 3.2', 'AWS', 'Chef', 'MySQL', 'Resque', 'RabbitMQ'] })
+      ],
+      technologies: ['Rails 3.2', 'Heroku', 'MySQL', 'Redis', 'Sidekiq', 'Web Crawling', 'MicroServices'] })
 
   .panel.panel-default
     .panel-body
@@ -72,16 +91,16 @@
       %p
         Grew the business to $75k/month in revenue by building a sales team that implemented sales processes leveraging LinkedIn, cold emailing, and follow up calls tracked through StreakCRM.
       %p
-        Singlehandedly developed the following software tools:
-      %p 
+        Singlehandedly developed the following software tools on Rails:
+      %p
         %ul
-          %li 
-            %a(href="http://www.clienthero.co") ClientHero 
+          %li
+            %a(href="http://www.clienthero.co") ClientHero
             \- a client management portal for customers to place orders and view order status
-          %li 
-            %a(href="http://www.rankhero.co") RankHero 
+          %li
+            %a(href="http://www.rankhero.co") RankHero
             \- private content network for building backlinks to improve SEO
-          %li 
+          %li
             %a(href="http://www.domainjawa.com") DomainJawa
             \- marketplace for high value expired domains
           %li Crawler - distributed web crawler created to find high value expired domains
@@ -94,14 +113,14 @@
         Founder
         %small
           %strong
-            %a(href="https://www.ranktracker.io") Ranktracker.io
+            %a(href="https://ranktracker-io.herokuapp.com") Ranktracker.io
           %span.pull-right.hidden-sm.hidden-xs
             %span.label.label-warning San Francisco
-            %span.label.label-info Aug 2013 - Current
+            %span.label.label-info Aug 2013 - May 2015
           .hidden-lg.hidden-md
             %p
             .label.label-warning San Francisco
-            .label.label-info Aug 2013 - Current
+            .label.label-info Aug 2013 - May 2015
       %p
         Singlehandedly architected, designed, coded, and launched RankTracker in &lt; 3 months, part-time.
       %p
@@ -165,7 +184,7 @@
         %li
           Tech Stack:
         %li
-          %span.badge.badge-success Rails 3.2.12
+          %span.badge.badge-success Rails 3.2
           %span.divider
         %li
           %span.badge.badge-success Heroku
@@ -179,13 +198,27 @@
         %li
           %span.badge.badge-success PPTP/L2TP VPN
 
+  = haml(:job, layout: false, locals: { logo: '/images/bitxf.ico',
+      position: 'CoFounder',
+      employer: 'BitXF',
+      employer_url: 'https://www.bitxf.com',
+      location: 'Remote',
+      dates: 'September 2012 - June 2013',
+      bullets: [ 'Migrated from MySQL to Postgres.',
+        'Optimized queries and cached user data to improve performance.',
+        'Used WebSockets to push realtime trading data to browser.',
+        'Created versioned JSON API to allow for automated trades.',
+        'Integrated Google Authenticator for Two Factor Authentication.',
+        'Implemented and maintained i18n for the application (English and Chinese).'],
+      technologies: ['Rails 3', 'Postgres', 'Memcached', 'Bitcoin', 'i18n', 'TFA/OTP', 'Socket.io'] })
+
   .panel.panel-default
     .panel-body
-      %h3 
+      %h3
         %img(src="/images/tnc.png")
         Senior Web Developer
         %small
-          %strong 
+          %strong
             %a(href="http://www.thenetcircle.com") TheNetCircle
           %span.pull-right.hidden-sm.hidden-xs
             %span.label.label-warning Shanghai
@@ -199,14 +232,14 @@
         Spearheaded and implemented functional testing as a requirement for Scrum story completion via Behat and Jenkins - for <em>two</em> projects, reducing the number of bugs filed each sprint by 50%.
       %p
         Streamlined deployment from multiple shell scripts and commands into a one-click button on Jenkins, complete with test run results, reporting, and notifications.
-      %p 
+      %p
         Pioneered the use of static code analysis via <a href="http://www.sonarsource.org">Sonar</a> to find compile-time (interpret-time for PHP) bugs.
       %p
         Identified and restructured slow MySQL queries to improve application performance.
       %p
-        Set up, customized, and maintained an instance of <a href="http://hubot.github.com">Hubot</a> for broadcasting build and deploy statuses (as well as funny jokes and pictures) on company IRC channels. 
+        Set up, customized, and maintained an instance of <a href="http://hubot.github.com">Hubot</a> for broadcasting build and deploy statuses (as well as funny jokes and pictures) on company IRC channels.
       %p
-        Responsible for interviewing candidates. Created a semi-automated system for giving candidates written and coding tests to weed out unqualified applicants, saving interviewers 10 hours/week on average. 
+        Responsible for interviewing candidates. Created a semi-automated system for giving candidates written and coding tests to weed out unqualified applicants, saving interviewers 10 hours/week on average.
       %p
         Successfully convinced management to reboot a flailing 3+ year project that had no growth plan which was costing the company €X0,000 EUR/month. See the presentation at SpeakerDeck.
 
@@ -233,11 +266,11 @@
 
   .panel.panel-default
     .panel-body
-      %h3 
+      %h3
         %img(src="/images/lime.png")
         Software Engineer
         %small
-          %strong 
+          %strong
             %a(href="http://www.limebrokerage.com") Lime Brokerage
           %span.pull-right.hidden-sm.hidden-xs
             %span.label.label-warning Boston
@@ -249,13 +282,13 @@
 
       %p
         Architected and programmed a real time risk metric calculation engine in C++ used to process a variety of equities, futures, and options market metrics used in analyzing performance and risk of automated trading algorithms for each brokerage account. This engine then communicated the metrics (up to 1000/sec) via a Lime proprietary RPC messaging system to the control plane.
-      %p 
+      %p
         Designed and developed PULP, a custom programming language that incorporates basic elements of equities measurements (e.g. open order value, current buying power, shares traded, etc.) combined with mathematical and boolean operators to build customizable risk metrics on demand that broadcasts the values to clients in real time. PULP used ANTLR 3 for parsing and lexing.
       %p
         Developed the client side portlet in Flex for viewing the real time risk calculation metrics. The data was obtained from the control plane configuration via our web services backend implemented in Java and sent to the Flex clientside frontend via AMF. The data was requested using a GUI that generated the PULP code necessary to calculate the metric.
       %p
         Worked with J2EE using a custom MVC architecture through JBoss/Tomcat, Hibernate + MySQL for data store, and Adobe Flex for front end visualization to create portlets for clients to access various account, market, and risk data.
-      %p 
+      %p
         Experimented with CUDA, an nVidia architecture used to take advantage of the parallel processing power of GPUs to reduce computational running time.
       %p
         Prepared and demonstrated presentations of this technology to both internal users and potential customers.
@@ -286,11 +319,11 @@
 
   .panel.panel-default
     .panel-body
-      %h3 
+      %h3
         %img(src="/images/mitll.png")
         Satellite Software Engineer Intern
         %small
-          %strong 
+          %strong
             %a(href="http://www.ll.mit.edu") MIT Lincoln Labs
           %span.pull-right.hidden-sm.hidden-xs
             %span.label.label-warning Boston
@@ -302,7 +335,7 @@
 
       %p
         Received government security clearance to work on "Secret" level classified projects.
-      %p 
+      %p
         Designed and implemented a filter for separating satellite messages by protocol and content type, cutting debug time by 300% by only showing relevant acknowledge and error messages.
       %p
         Added datasets consisting of an XML/Java GUI frontend for input and a C++ backend for various satellite protocols in a production environment.
@@ -326,10 +359,10 @@
 
   %h2.text-center Education
 
-  %h3 
+  %h3
     %img(src="/images/bu.png")
     Boston University
-    %small 
+    %small
       %span.pull-right.hidden-sm.hidden-xs
         %strong Bachelor's and Master's in Computer Science
         &nbsp;
@@ -349,18 +382,18 @@
   .row
     .col-lg-5.col-sm-12
       %h4 Languages
-      %p 
+      %p
         %img(src="/images/png/gb.png")
-        Native English 
+        Native English
         %br
         %img(src="/images/png/cn.png")
         Fluent in Mandarin Chinese
 
     .col-lg-5.col-sm-12
       %h4 Citizenship
-      %p 
+      %p
         %img(src="/images/png/us.png")
-        Dual United States and Taiwan (ROC) citizen. 
-        %br 
+        Dual United States and Taiwan (ROC) citizen.
+        %br
         %img(src="/images/png/tw.png")
         Legally able to work in the USA, no H1B visa required!
